@@ -1228,7 +1228,7 @@
     .auth-stat:nth-child(odd){border-right:1px solid var(--line)}
     .reality-grid,.about-grid{grid-template-columns:1fr;gap:40px}
     .eco-comparison{grid-template-columns:1fr;gap:20px}
-    .eco-vs{transform:rotate(90deg);margin:0 auto;width:50px;height:50px;font-size:18px}
+    .eco-vs{margin:0 auto;width:50px;height:50px;font-size:18px}
     .features{grid-template-columns:1fr}
     .dest-card-new{flex:0 1 calc((100% - 24px) / 2);max-width:calc((100% - 24px) / 2)}
     .compare-grid{grid-template-columns:1fr}
@@ -1906,7 +1906,7 @@
           <li>Restaurantes e atrações testados</li>
           <li>Acesso vitalício + atualizações</li>
         </ul>
-        <a href="#" class="offer-cta">Comprar agora</a>
+        <a href="#" class="offer-cta" style="background-color: rgb(255, 255, 255); color: rgb(0, 20, 74);">Comprar agora</a>
       </div>
       <div class="offer-card featured" data-cc-id="cc-22">
         <span class="offer-badge">Mais escolhido</span>
@@ -1924,7 +1924,7 @@
           <li>Todos os links de compra no PDF</li>
           <li>Acesso vitalício + atualizações</li>
         </ul>
-        <a href="#" class="offer-cta">Quero o combo</a>
+        <a href="#" class="offer-cta" style="background-color: rgb(159, 239, 114);">Quero o combo</a>
       </div>
     </div>
     <div class="discount-banner reveal is-visible">
@@ -1990,14 +1990,6 @@
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final" data-cc-id="cc-5">
-  <div class="container">
-    <h2 class="reveal is-visible">R$97 pra uma viagem <span class="blue">absurda de boa</span></h2>
-    <p style="color: rgb(255, 255, 255);" data-cc-id="cc-4">Você vai gastar milhares de reais nessa viagem. Investir o preço de um almoço pra ela ser perfeita é o mínimo.</p>
-    <a href="#oferta" class="hero-cta reveal is-visible" style="color: rgb(255, 255, 255);" data-cc-id="cc-6">Quero meu roteiro agora</a>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
@@ -2496,6 +2488,25 @@
     padding:8px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;
   }
   #tweaks-panel button:hover{background:#E3F2FD}
+
+  /* PULSE do botão do hero */
+  .hero-cta.pulse{
+    animation: heroCtaPulse var(--pulse-dur, 1.6s) cubic-bezier(.4,0,.6,1) infinite;
+    will-change: transform, box-shadow;
+  }
+  @keyframes heroCtaPulse{
+    0%, 100%{
+      transform: scale(1);
+      box-shadow: 0 8px 24px rgba(38,132,255,.35), 0 0 0 0 rgba(38,132,255, var(--pulse-alpha, .55));
+    }
+    50%{
+      transform: scale(var(--pulse-scale, 1.04));
+      box-shadow: 0 12px 32px rgba(38,132,255,.45), 0 0 0 var(--pulse-ring, 14px) rgba(38,132,255, 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero-cta.pulse{animation:none}
+  }
 </style>
 <div id="tweaks-panel">
   <h4>Ajustar nav (logo + botão)</h4>
@@ -2546,6 +2557,17 @@
   <input type="range" id="f3-x" min="-300" max="300" value="0" step="1">
   <label>Vertical <span class="val" id="f3y-val">0</span>px</label>
   <input type="range" id="f3-y" min="-300" max="300" value="0" step="1">
+  <h4 style="margin-top:18px;padding-top:14px;border-top:1px solid #e0e7ef">Botão hero — Pulsação</h4>
+  <label style="display:flex;align-items:center;gap:8px;margin-top:4px">
+    <input type="checkbox" id="pulse-on" style="width:auto;margin:0">
+    Ativar pulsação
+  </label>
+  <label>Velocidade <span class="val" id="pspd-val">1.6</span>s</label>
+  <input type="range" id="pulse-speed" min="6" max="40" value="16" step="1">
+  <label>Intensidade (escala) <span class="val" id="pscl-val">4</span>%</label>
+  <input type="range" id="pulse-scale" min="0" max="15" value="4" step="1">
+  <label>Anel (raio) <span class="val" id="prng-val">14</span>px</label>
+  <input type="range" id="pulse-ring" min="0" max="40" value="14" step="1">
   <div class="row-btn">
     <button id="tweaks-reset">Resetar</button>
     <button id="tweaks-close">Fechar</button>
@@ -2574,7 +2596,11 @@
     "dSz": 10,
     "dPh": 29,
     "dBg": "#F4B942",
-    "dFg": "#0A1F3D"
+    "dFg": "#0A1F3D",
+    "pulseOn": true,
+    "pulseSpeed": 28,
+    "pulseScale": 8,
+    "pulseRing": 14
   }/*EDITMODE-END*/;
 
   const panel = document.getElementById('tweaks-panel');
@@ -2582,6 +2608,7 @@
   const btn = document.querySelector('nav .nav-cta');
   const heroTitle = document.querySelector('.hero-title');
   const heroSub = document.querySelector('.hero-sub');
+  const heroCta = document.querySelector('.hero .hero-cta');
   const state = Object.assign({}, TWEAK_DEFAULTS);
 
   // Style tag dinâmica pra aplicar só no mobile
@@ -2687,6 +2714,21 @@
     document.getElementById('d-ph').value = state.dPh;
     document.getElementById('d-bg').value = state.dBg;
     document.getElementById('d-fg').value = state.dFg;
+
+    // Pulsação do botão hero
+    if(heroCta){
+      heroCta.classList.toggle('pulse', !!state.pulseOn);
+      heroCta.style.setProperty('--pulse-dur', (state.pulseSpeed/10).toFixed(1) + 's');
+      heroCta.style.setProperty('--pulse-scale', (1 + state.pulseScale/100).toFixed(3));
+      heroCta.style.setProperty('--pulse-ring', state.pulseRing + 'px');
+    }
+    document.getElementById('pulse-on').checked = !!state.pulseOn;
+    document.getElementById('pulse-speed').value = state.pulseSpeed;
+    document.getElementById('pulse-scale').value = state.pulseScale;
+    document.getElementById('pulse-ring').value = state.pulseRing;
+    document.getElementById('pspd-val').textContent = (state.pulseSpeed/10).toFixed(1);
+    document.getElementById('pscl-val').textContent = state.pulseScale;
+    document.getElementById('prng-val').textContent = state.pulseRing;
   }
   apply();
 
@@ -2703,7 +2745,11 @@
         f3x: state.f3x, f3y: state.f3y,
         dx: state.dx, dy: state.dy,
         dSz: state.dSz, dPh: state.dPh,
-        dBg: state.dBg, dFg: state.dFg
+        dBg: state.dBg, dFg: state.dFg,
+        pulseOn: state.pulseOn,
+        pulseSpeed: state.pulseSpeed,
+        pulseScale: state.pulseScale,
+        pulseRing: state.pulseRing
       }}, '*');
     }catch(e){}
   }
@@ -2739,6 +2785,14 @@
   bind('d-x','dx'); bind('d-y','dy');
   bind('d-sz','dSz'); bind('d-ph','dPh');
   bindColor('d-bg','dBg'); bindColor('d-fg','dFg');
+
+  document.getElementById('pulse-on').addEventListener('change', e => {
+    state.pulseOn = e.target.checked;
+    apply(); persist();
+  });
+  bind('pulse-speed','pulseSpeed');
+  bind('pulse-scale','pulseScale');
+  bind('pulse-ring','pulseRing');
 
   document.getElementById('tweaks-reset').addEventListener('click', () => {
     state.logoX = 0; state.logoY = 0; state.btnX = 0; state.btnY = 0;
