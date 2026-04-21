@@ -839,19 +839,37 @@
     line-height:1;letter-spacing:-.03em;
   }
   .price .period{font-size:14px;opacity:.7}
+  .price-bump{
+    display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px;margin-bottom:24px;
+  }
+  .price-bump .bump-off{
+    font-family:'Sora',sans-serif;
+    font-size:68px;font-weight:800;
+    line-height:1;letter-spacing:-.03em;
+  }
+  .price-bump .bump-lbl{
+    font-family:'Sora',sans-serif;
+    font-size:26px;font-weight:800;letter-spacing:.02em;
+    line-height:1;
+  }
+  .price-bump .bump-sub{
+    flex:1 1 100%;
+    font-size:13px;opacity:.85;font-weight:500;
+    margin-top:2px;
+  }
   .offer-features{list-style:none;margin-bottom:32px}
   .offer-features li{
     padding:10px 0;font-size:15px;
     display:flex;gap:10px;align-items:center;
   }
   .offer-features li::before{
-    content:'✓';color:var(--blue);font-weight:700;
+    content:'✓';color:#fff;font-weight:700;
     width:18px;height:18px;border-radius:50%;
-    background:var(--sky);
+    background:#22C55E;
     display:flex;align-items:center;justify-content:center;font-size:11px;
   }
   .offer-card.featured .offer-features li::before{
-    color:var(--blue);background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+    color:#fff;background:#22C55E;border:1px solid rgba(255,255,255,.25);backdrop-filter:none;-webkit-backdrop-filter:none;
   }
   .offer-cta{
     display:block;text-align:center;
@@ -1392,36 +1410,54 @@
   .reveal{
     opacity:0;
     transform:translateY(28px);
-    transition:opacity .8s ease-out, transform .8s ease-out;
-    will-change:opacity, transform;
+    filter:blur(8px);
+    transition:opacity .7s ease-out, transform .7s ease-out, filter .7s ease-out;
+    will-change:opacity, transform, filter;
   }
   .reveal.is-visible{
     opacity:1;
     transform:translateY(0);
+    filter:blur(0);
   }
   /* Stagger: elementos filhos com .reveal-stagger aparecem em sequência */
   .reveal-stagger.is-visible > *{
     opacity:0;
     transform:translateY(22px);
+    filter:blur(6px);
     animation:revealUp .7s ease-out forwards;
   }
   .reveal-stagger.is-visible > *:nth-child(1){animation-delay:.05s}
-  .reveal-stagger.is-visible > *:nth-child(2){animation-delay:.15s}
-  .reveal-stagger.is-visible > *:nth-child(3){animation-delay:.25s}
-  .reveal-stagger.is-visible > *:nth-child(4){animation-delay:.35s}
-  .reveal-stagger.is-visible > *:nth-child(5){animation-delay:.45s}
-  .reveal-stagger.is-visible > *:nth-child(6){animation-delay:.55s}
-  .reveal-stagger.is-visible > *:nth-child(7){animation-delay:.65s}
-  .reveal-stagger.is-visible > *:nth-child(8){animation-delay:.75s}
+  .reveal-stagger.is-visible > *:nth-child(2){animation-delay:.12s}
+  .reveal-stagger.is-visible > *:nth-child(3){animation-delay:.19s}
+  .reveal-stagger.is-visible > *:nth-child(4){animation-delay:.26s}
+  .reveal-stagger.is-visible > *:nth-child(5){animation-delay:.33s}
+  .reveal-stagger.is-visible > *:nth-child(6){animation-delay:.40s}
+  .reveal-stagger.is-visible > *:nth-child(7){animation-delay:.47s}
+  .reveal-stagger.is-visible > *:nth-child(8){animation-delay:.54s}
   @keyframes revealUp{
-    to{opacity:1;transform:translateY(0);}
+    to{opacity:1;transform:translateY(0);filter:blur(0);}
+  }
+  /* Section-level reveal: blur + fade + slide, reversível ao sair */
+  .sec-reveal{
+    opacity:0;
+    transform:translateY(34px);
+    filter:blur(10px);
+    transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1), filter .8s ease-out;
+    will-change:opacity, transform, filter;
+  }
+  .sec-reveal.is-in{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
   }
   /* Acessibilidade: quem prefere menos movimento vê tudo estático */
   @media (prefers-reduced-motion: reduce){
     .reveal,
-    .reveal-stagger > *{
+    .reveal-stagger > *,
+    .sec-reveal{
       opacity:1 !important;
       transform:none !important;
+      filter:none !important;
       animation:none !important;
       transition:none !important;
     }
@@ -1608,7 +1644,7 @@
         <div class="dest-card-body">
           <div class="dest-card-head">
             <h3>Roteiro Paris + Bônus</h3>
-            <div class="dest-card-price">R$ 97</div>
+            <div class="dest-card-price">R$ 107</div>
           </div>
           <div class="dest-card-duration">⏱ 4 dias</div>
           <button class="dest-card-toggle" onclick="toggleDetails(this)">
@@ -1650,7 +1686,7 @@
         <div class="dest-card-body">
           <div class="dest-card-head">
             <h3>Roteiro Roma + Bônus</h3>
-            <div class="dest-card-price">R$ 97</div>
+            <div class="dest-card-price">R$ 107</div>
           </div>
           <div class="dest-card-duration">⏱ 4 dias</div>
           <button class="dest-card-toggle" onclick="toggleDetails(this)">
@@ -1692,7 +1728,7 @@
         <div class="dest-card-body">
           <div class="dest-card-head">
             <h3>Roteiro Veneza + Bônus</h3>
-            <div class="dest-card-price">R$ 97</div>
+            <div class="dest-card-price">R$ 107</div>
           </div>
           <div class="dest-card-duration">⏱ 4 dias</div>
           <button class="dest-card-toggle" onclick="toggleDetails(this)">
@@ -1734,7 +1770,7 @@
         <div class="dest-card-body">
           <div class="dest-card-head">
             <h3>Roteiro Florença + Bônus</h3>
-            <div class="dest-card-price">R$ 97</div>
+            <div class="dest-card-price">R$ 107</div>
           </div>
           <div class="dest-card-duration">⏱ 4 dias</div>
           <button class="dest-card-toggle" onclick="toggleDetails(this)">
@@ -1776,7 +1812,7 @@
         <div class="dest-card-body">
           <div class="dest-card-head">
             <h3>Roteiro Milão + Bônus</h3>
-            <div class="dest-card-price">R$ 97</div>
+            <div class="dest-card-price">R$ 107</div>
           </div>
           <div class="dest-card-duration">⏱ 4 dias</div>
           <button class="dest-card-toggle" onclick="toggleDetails(this)">
@@ -1858,7 +1894,7 @@
         <h3 style="color: rgb(0, 0, 0);">O que você investe e já resolve tudo</h3>
         <div class="eco-item" style="color: rgb(0, 0, 0);">
           <div class="eco-item-name" style="color: rgb(0, 0, 0);">Roteiro completo em PDF<small style="color: rgb(0, 0, 0);">Dia a dia com manhã, tarde e noite</small></div>
-          <div class="eco-item-price" style="color: rgb(0, 0, 0);">R$ 97</div>
+          <div class="eco-item-price" style="color: rgb(0, 0, 0);">R$ 107</div>
         </div>
         <div class="eco-item" style="color: rgb(0, 0, 0);">
           <div class="eco-item-name" style="color: rgb(0, 0, 0);">Tempo pesquisando<small style="color: rgb(0, 0, 0);">Zero. Você só abre e segue</small></div>
@@ -1874,14 +1910,17 @@
         </div>
         <div class="eco-total" style="color: rgb(0, 0, 0);">
           <div class="eco-total-label" style="color: rgb(0, 0, 0);">Investimento total</div>
-          <div class="eco-total-price" style="color: rgb(0, 0, 0);">R$ 97</div>
+          <div class="eco-total-price" style="color: rgb(0, 0, 0);">R$ 107</div>
         </div>
       </div>
     </div>
 
-    <div class="eco-conclusion reveal is-visible" style="color: rgb(0, 0, 0);">
+    <div class="eco-conclusion reveal is-visible" style="color: rgb(0, 0, 0); font-weight: 500; padding: 30px 40px 10px;">
       <h4 style="color: rgb(0, 0, 0);">Você economiza <span style="color: rgb(0, 0, 0);">até 1.000€</span> na prática</h4>
-      <p style="color: rgb(0, 0, 0);">E ainda aproveita 100% da viagem. O roteiro custa menos do que um almoço em Paris — e pode salvar a viagem inteira.</p>
+      <p style="color: rgb(0, 0, 0);">E ainda aproveita 100% da viagem. O roteiro custa menos do que um 
+almoço em Paris e pode salvar a viagem inteira.
+
+</p>
     </div>
   </div>
 </section>
@@ -1903,7 +1942,7 @@
         <p class="desc">Pra quem vai pra um destino só</p>
         <div class="price">
           <span class="currency">R$</span>
-          <span class="amount">97</span>
+          <span class="amount">107</span>
           <span class="period">à vista</span>
         </div>
         <ul class="offer-features">
@@ -1913,29 +1952,29 @@
           <li>Restaurantes e atrações testados</li>
           <li>Acesso vitalício + atualizações</li>
         </ul>
-        <a href="#" class="offer-cta" style="background-color: rgb(255, 255, 255); color: rgb(0, 20, 74);">Comprar agora</a>
+        <a href="#" class="offer-cta" style="background-color: rgb(159, 239, 114); color: rgb(0, 20, 74);">Comprar agora</a>
       </div>
       <div class="offer-card featured" data-cc-id="cc-22">
-        <span class="offer-badge">Mais escolhido</span>
-        <h3>Combo Europa</h3>
-        <p class="desc">Pra quem vai conhecer mais de uma cidade</p>
-        <div class="price">
-          <span class="currency">R$</span>
-          <span class="amount" style="" data-cc-id="cc-23">197</span>
-          <span class="period">à vista</span>
+        <span class="offer-badge" style="background-color: rgb(159, 239, 114); font-size: 16px;">Oferta extra</span>
+        <h3>Leve 2 ou mais e economize</h3>
+        <p class="desc">10% OFF automático a partir do 2º roteiro</p>
+        <div class="price price-bump">
+          <span class="bump-off">10%</span>
+          <span class="bump-lbl">OFF</span>
+          <span class="bump-sub">a partir do 2º roteiro</span>
         </div>
         <ul class="offer-features">
-          <li>Múltiplos destinos inclusos</li>
-          <li style="" data-cc-id="cc-21">Economia real vs comprar separado</li>
-          <li>Roteiros encadeados entre cidades</li>
-          <li>Todos os links de compra no PDF</li>
+          <li>Desconto aplicado automático no checkout</li>
+          <li>Vale pra qualquer combinação de destinos</li>
+          <li>Sem cupom, sem código</li>
+          <li>Cada roteiro chega separado no e-mail</li>
           <li>Acesso vitalício + atualizações</li>
         </ul>
-        <a href="#" class="offer-cta" style="background-color: rgb(159, 239, 114);">Quero o combo</a>
+        <a href="#destinos" class="offer-cta" style="background-color: rgb(159, 239, 114);">Ver todos os destinos</a>
       </div>
     </div>
-    <div class="discount-banner reveal is-visible">
-      Comprou 2 ou mais? <strong>20% OFF aplicado automaticamente</strong> no checkout
+    <div class="discount-banner reveal is-visible" style="width: 1152px;">
+      Comprou 2 ou mais? <strong style="font-size: 15px; font-weight: 600; text-align: center; padding: 5px 9px 6px; margin: 10px; border-width: 1px;">20% OFF aplicado automaticamente</strong> no checkout
     </div>
   </div>
 </section>
@@ -2355,13 +2394,13 @@
     // COMPRAS (60% das notificações)
     {emoji:'🎉', title:'Nova compra!', text:'<strong>Mariana</strong> acabou de comprar o roteiro de <strong>Paris</strong>', time:'há 2 minutos'},
     {emoji:'🎉', title:'Nova compra!', text:'<strong>Carlos</strong> garantiu o roteiro de <strong>Roma</strong>', time:'há 4 minutos'},
-    {emoji:'🎉', title:'Nova compra!', text:'<strong>Juliana</strong> comprou o <strong>Combo Europa</strong>', time:'há 7 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Juliana</strong> comprou o <strong></strong>', time:'há 7 minutos'},
     {emoji:'🎉', title:'Nova compra!', text:'<strong>Ricardo</strong> garantiu o roteiro de <strong>Milão</strong>', time:'há 9 minutos'},
     {emoji:'🎉', title:'Nova compra!', text:'<strong>Beatriz</strong> comprou o roteiro de <strong>Veneza</strong>', time:'há 12 minutos'},
-    {emoji:'🎉', title:'Nova compra!', text:'<strong>Felipe</strong> levou o <strong>Combo Europa</strong>', time:'há 15 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Felipe</strong> levou o <strong></strong>', time:'há 15 minutos'},
     {emoji:'🎉', title:'Nova compra!', text:'<strong>Amanda</strong> comprou o roteiro de <strong>Florença</strong>', time:'há 18 minutos'},
     {emoji:'🎉', title:'Nova compra!', text:'<strong>Bruno</strong> garantiu o roteiro de <strong>Florença</strong>', time:'há 21 minutos'},
-    {emoji:'🎉', title:'Nova compra!', text:'<strong>Larissa</strong> comprou o <strong>Combo Europa</strong>', time:'há 24 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Larissa</strong> comprou o <strong></strong>', time:'há 24 minutos'},
     
     // VISUALIZAÇÕES (30% - cria escassez)
     {emoji:'👀', title:'Alta procura agora', text:'<strong>23 pessoas</strong> estão vendo esta oferta neste momento', time:'ao vivo', live:true},
@@ -2514,6 +2553,29 @@
   @media (prefers-reduced-motion: reduce){
     .hero-cta.pulse{animation:none}
   }
+
+  /* Pulse do badge "OFERTA EXTRA" e dos CTAs da seção de ofertas */
+  .offer-badge, #oferta .offer-cta{
+    animation: offerPulse 1.8s cubic-bezier(.4,0,.6,1) infinite;
+    will-change: transform, box-shadow;
+  }
+  @keyframes offerPulse{
+    0%, 100%{
+      transform: scale(1);
+      box-shadow: 0 6px 18px rgba(159,239,114,.25), 0 0 0 0 rgba(159,239,114,.55);
+    }
+    50%{
+      transform: scale(1.04);
+      box-shadow: 0 12px 32px rgba(159,239,114,.4), 0 0 0 14px rgba(159,239,114,0);
+    }
+  }
+  /* Tilted badge mantém rotação base; só pulsa a escala/shadow */
+  .offer-badge{
+    transform-origin: center;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .offer-badge, #oferta .offer-cta{animation:none}
+  }
 </style>
 <div id="tweaks-panel">
   <h4>Ajustar nav (logo + botão)</h4>
@@ -2583,8 +2645,8 @@
 <script>
 (function(){
   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-    "logoX": 507,
-    "logoY": 42,
+    "logoX": 514,
+    "logoY": 61,
     "logoSz": 70,
     "logoCenter": true,
     "btnX": -1061,
@@ -2949,7 +3011,7 @@
 <div id="sticky-cta" class="is-visible">
   <div class="price-mini">
     <div class="was">R$ 97</div>
-    <div class="now">R$ 47<small>/roteiro</small></div>
+    <div class="now">R$ 107<small>/roteiro</small></div>
   </div>
   <a href="#oferta" class="cta-btn">Comprar agora</a>
 </div>
@@ -3143,7 +3205,7 @@
   <div class="buy-sticky-inner">
     <div class="buy-sticky-price">
       <span class="old">R$ 97</span>
-      <span class="now">R$ 47<small>/roteiro</small></span>
+      <span class="now">R$ 107<small>/roteiro</small></span>
     </div>
     <a href="#oferta" class="buy-sticky-cta">
       Comprar agora
@@ -3234,6 +3296,34 @@
     slot = (slot + 1) % avatars.length;
   }
   setInterval(tick, 1800);
+})();
+</script>
+
+<script>
+// Global section reveal: blur + slide + fade, REVERSÍVEL ao sair da tela
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // Seções da landing (exclui hero — já tem animação própria)
+  var sections = document.querySelectorAll('section:not(.hero), footer, .auth-strip');
+  sections.forEach(function(s){ s.classList.add('sec-reveal'); });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('is-in');
+      } else {
+        // Só remove se estiver bem fora (evita flicker quando parte do elemento ainda visível)
+        var r = e.boundingClientRect;
+        if(r.bottom < 0 || r.top > window.innerHeight){
+          e.target.classList.remove('is-in');
+        }
+      }
+    });
+  }, {
+    threshold: [0, 0.15],
+    rootMargin: '0px 0px -10% 0px'
+  });
+  sections.forEach(function(s){ io.observe(s); });
 })();
 </script>
 
