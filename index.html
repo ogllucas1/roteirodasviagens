@@ -1,249 +1,3330 @@
-￼
-Economize até 1.000€ e semanas de planejamento na sua viagem
-Roteiros completos dia a dia, com os principais pontos turísticos, links de compra direto no PDF e tudo testado por quem já conhece 38 países. Você abre e segue.
-Ver roteiros disponíveis
+<!DOCTYPE html><html lang="pt-BR"><head>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiro das Viagens | Roteiros Prontos pra Europa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Sora:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1628;
+    --navy-deep:#07101E;
+    --navy-soft:#162238;
+    --blue:#3B9EFF;
+    --blue-bright:#5BB0FF;
+    --blue-light:#8FCBFF;
+    --sky:rgba(255,255,255,.06);
+    --paper:#0D1628;
+    --white:#FFFFFF;
+    --card:rgba(255,255,255,.06);
+    --card-border:rgba(255,255,255,.12);
+    --text:#FFFFFF;
+    --text-soft:#B8C5D9;
+    --gold:#5BB0FF;
+    --gold-deep:#3B9EFF;
+    --green:#34D06C;
+    --red:#FF6B6B;
+    --line:rgba(255,255,255,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+
+  /* ============ DARK MODE OVERRIDES ============ */
+  /* Seções e cards que usam fundo branco → viram glass */
+  .feature,.eco-card,.compare-card,.sol-card,.bonus-card,
+  .faq-item,.trust-card,.step,.pricing-card,.guarantee-card{
+    background:rgba(255,255,255,.06) !important;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.12);
+    color:#FFFFFF;
+  }
+  .faq{background:transparent !important}
+  /* Força textos escuros (usados no tema claro) a ficarem legíveis no fundo escuro */
+  [style*="color:#0A1F3D"],[style*="color:#0a1f3d"],
+  [style*="color:#1A2B45"],[style*="color:#1a2b45"],
+  [style*="color:#06152C"],[style*="color:#06152c"],
+  [style*="color:#152F54"],[style*="color:#152f54"],
+  [style*="color:#0D1628"],[style*="color:#0d1628"],
+  [style*="color:#0F1E35"],[style*="color:#0f1e35"],
+  [style*="color:#111"],[style*="color:#222"],[style*="color:#333"],
+  [style*="color:#000"],[style*="color:black"],
+  [style*="color:rgb(0,0,0)"],[style*="color: rgb(0, 0, 0)"]{
+    color:#FFFFFF !important;
+  }
+  [style*="color:#5C6F8A"],[style*="color:#5c6f8a"],
+  [style*="color:#666"],[style*="color:#777"],[style*="color:#888"]{
+    color:#B8C5D9 !important;
+  }
+  /* Fundos claros inesperados viram vidro */
+  [style*="background:#FFFFFF"],[style*="background:#ffffff"],
+  [style*="background:#FFF"],[style*="background:#fff"],
+  [style*="background-color:#FFFFFF"],[style*="background-color:#ffffff"],
+  [style*="background:#F5F8FC"],[style*="background:#f5f8fc"],
+  [style*="background:#E3F2FD"],[style*="background:#e3f2fd"]{
+    background:rgba(255,255,255,.06) !important;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.12) !important;
+    color:#FFFFFF !important;
+  }
+  /* Textos padrão */
+  body,p,li,span,dd,dt,blockquote,figcaption,label,small,td,th,caption{color:#FFFFFF;}
+  /* Headings genéricos — sempre branco puro */
+  h1,h2,h3,h4,h5,h6{color:#FFFFFF !important;}
+  /* Inputs e textareas */
+  input,textarea,select{
+    background:rgba(255,255,255,.06) !important;
+    color:#FFFFFF !important;
+    border:1px solid rgba(255,255,255,.15) !important;
+  }
+  input::placeholder,textarea::placeholder{color:#B8C5D9 !important;}
+  body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    line-height:1.5;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* ============ TOPBAR ============ */
+  .topbar{display:none}
+  .topbar strong{color:var(--gold)}
+
+  /* ============ NAV ============ */
+  nav{
+    background:var(--navy);
+    color:rgb(255, 255, 255);
+    padding:18px 0;
+    position:relative;z-index:100;
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:1200px;margin:0 auto;padding:0 24px;
+  }
+  .logo{
+    font-family:'Sora',sans-serif;
+    font-weight:800;font-size:20px;
+    letter-spacing:-.02em;
+    display:flex;align-items:center;gap:8px;
+    color:var(--white);
+    text-decoration:none;
+  }
+  .logo-icon{
+    width:34px;height:34px;
+    background:linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 100%);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+    box-shadow:0 4px 12px rgba(30,136,229,.4);
+  }
+  .logo .name{color:var(--white)}
+  .logo .sub{color:var(--blue-light);font-size:11px;font-weight:500;display:block;letter-spacing:.1em;text-transform:uppercase;margin-top:-2px}
+  .logo-img{
+    height:97px;width:auto;display:block;
+    transition:transform .2s;
+  }
+  .logo-img-footer{height:102px;margin:0 auto 10px}
+  .logo:hover .logo-img{transform:scale(1.05)}
+  .nav-links{display:flex;gap:32px;font-size:14px;font-weight:500}
+  .nav-links a{color:var(--white);text-decoration:none;opacity:.85;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{
+    background:var(--blue);color:var(--white);
+    padding:10px 22px;border-radius:999px;
+    font-weight:600;font-size:14px;
+    text-decoration:none;
+    transition:all .2s;
+  }
+  .nav-cta:hover{background:var(--blue-bright);transform:translateY(-2px)}
+
+  /* ============ HERO ============ */
+  .hero{
+    background:linear-gradient(180deg, var(--navy) 0%, var(--navy-soft) 100%);
+    color:var(--white);
+    padding:80px 0 120px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{display:none}
+  .clouds-bg{
+    position:absolute;inset:0;opacity:.06;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M30,60 Q40,40 55,45 Q65,30 80,40 Q95,35 100,55 L30,55 Z' fill='white'/%3E%3Cpath d='M120,75 Q130,55 145,60 Q155,45 170,55 Q185,50 190,70 L120,70 Z' fill='white'/%3E%3C/svg%3E");
+    background-size:400px;pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:60px;align-items:center;
+  }
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(30,136,229,.15);
+    border:1px solid rgba(30,136,229,.3);
+    color:var(--blue-light);
+    padding:8px 16px;border-radius:999px;
+    font-size:13px;font-weight:600;
+    margin-bottom:24px;
+    animation:slideDown .6s ease-out;
+  }
+  .hero-tag .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--blue-light);animation:pulse 2s infinite;
+  }
+  
+  /* HERO AGRESSIVO */
+  .hero-tag-aggressive{display:none !important}
+  .hero-tag-aggressive .dot{
+    background:#ff6b6b !important;
+    animation:pulse-danger 1.2s infinite !important;
+  }
+  .hero-title .danger{
+    color:#ff6b6b;
+    position:relative;
+    display:inline-block;
+  }
+  .hero-title .danger::after{
+    content:'';
+    position:absolute;
+    left:-2%;right:-2%;
+    bottom:8%;height:3px;
+    background:#ff6b6b;
+    opacity:.6;
+    transform:skewX(-5deg);
+  }
+  .hero-title .gold-big{
+    color:var(--gold);
+    font-size:1.15em;
+    text-shadow:0 4px 20px rgba(255,200,87,.4);
+    display:inline-block;
+    position:relative;
+    padding:0 6px;
+  }
+  .hero-title .gold-big::before{
+    content:'';
+    position:absolute;
+    inset:-4px -4px;
+    background:rgba(255,200,87,.1);
+    border-radius:8px;
+    z-index:-1;
+  }
+  .hero-cta-aggressive{
+    text-transform:uppercase !important;
+    letter-spacing:.05em;
+    font-size:16px !important;
+    font-weight:800 !important;
+    box-shadow:0 10px 30px rgba(30,136,229,.4), 0 0 0 3px rgba(30,136,229,.15) !important;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-cta-aggressive::before{
+    content:'';
+    position:absolute;
+    top:0;left:-100%;
+    width:100%;height:100%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+    animation:shine 3s infinite;
+  }
+  @keyframes shake{
+    0%,100%{transform:translateX(0)}
+    25%{transform:translateX(-3px)}
+    75%{transform:translateX(3px)}
+  }
+  @keyframes pulse-danger{
+    0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(255,107,107,.7)}
+    50%{opacity:.7;transform:scale(1.3);box-shadow:0 0 0 6px rgba(255,107,107,0)}
+  }
+  @keyframes shine{
+    0%{left:-100%}
+    50%,100%{left:200%}
+  }
+  h1.hero-title{
+    font-family:'Sora',sans-serif;
+    font-weight:800;
+    font-size:clamp(36px,5.2vw,62px);
+    line-height:1.02;
+    letter-spacing:-.025em;
+    margin-bottom:22px;
+    animation:slideUp .8s ease-out;
+  }
+  .hero-title .accent{color:var(--blue-light)}
+  .hero-title .gold{color:var(--gold)}
+  .hero-sub{
+    font-size:19px;
+    color:rgba(255,255,255,.85);
+    margin-bottom:36px;
+    max-width:540px;
+    animation:slideUp .8s ease-out .1s both;
+  }
+  .hero-cta{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--blue);color:var(--white);
+    padding:20px 38px;border-radius:999px;
+    font-weight:700;font-size:17px;
+    text-decoration:none;
+    box-shadow:0 10px 30px rgba(30,136,229,.4);
+    transition:all .2s;
+    animation:slideUp .8s ease-out .2s both;
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .hero-cta::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-75%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(
+      100deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,.35) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    transform:skewX(-20deg);
+    animation:heroSweep 2.8s ease-in-out infinite;
+    animation-delay:1.2s;
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero-cta > *{position:relative;z-index:1;}
+  @keyframes heroSweep{
+    0%   {left:-75%;}
+    55%  {left:125%;}
+    100% {left:125%;}
+  }
+  .hero-cta:hover{
+    background:var(--blue-bright);
+    transform:translateY(-3px);
+    box-shadow:0 14px 40px rgba(30,136,229,.55);
+  }
+  .hero-cta::after{content:'→';font-size:20px;position:relative;z-index:1;}
+  .hero-trust{
+    display:flex;align-items:center;gap:14px;
+    margin-top:36px;
+    animation:slideUp .8s ease-out .3s both;
+  }
+  .avatars{display:flex}
+  .avatar{
+    width:38px;height:38px;border-radius:50%;
+    border:3px solid var(--navy);
+    background-size:cover;background-position:center;
+    margin-left:-12px;
+    position:relative;overflow:hidden;
+  }
+  .avatar .av-layer{
+    position:absolute;inset:0;border-radius:50%;
+    background-size:cover;background-position:center;
+    opacity:0;transition:opacity .7s ease;
+  }
+  .avatar .av-layer.is-active{opacity:1}
+  .avatar:first-child{margin-left:0}
+  .trust-text{font-size:14px;color:rgba(255,255,255,.85)}
+  .trust-text strong{color:var(--white)}
+  .stars{color:var(--gold);font-size:14px;letter-spacing:2px}
+
+  /* HERO VISUAL */
+  .hero-visual{
+    position:relative;
+    width:100%;
+    max-width:540px;
+    aspect-ratio:1/1;
+    margin:0 auto;
+    animation:fadeIn 1.2s ease-out .4s both;
+  }
+  .hero-circle{
+    position:absolute;inset:0;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 100%);
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(30,136,229,.35);
+    aspect-ratio:1/1;
+  }
+  .hero-circle::before{
+    content:'';position:absolute;inset:0;
+    background-image:image-set(url('assets/hero-photo.webp') type('image/webp'), url('assets/hero-photo.jpg') type('image/jpeg'));background-image:url('assets/hero-photo.jpg');
+    background-size:cover;background-position:center 30%;
+  }
+  .float-card{
+    position:absolute;
+    background:#FFFFFF !important;
+    color:#1A2B45 !important;
+    padding:14px 20px;border-radius:14px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    display:flex;align-items:center;gap:12px;
+    font-size:14px;font-weight:600;z-index:3;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+    border:none !important;
+  }
+  .float-card *{color:#1A2B45 !important;}
+  .float-card div[style*="color:#5C6F8A"],
+  .float-card small,
+  .float-card .sub{color:#5C6F8A !important;font-weight:500}
+  .float-1{top:30px;left:-20px;animation:float 4s ease-in-out infinite}
+  .float-2{bottom:60px;right:-10px;animation:float 4s ease-in-out infinite 1s}
+  .float-3{bottom:20px;left:30px;animation:float 4s ease-in-out infinite 2s}
+  .float-icon{
+    width:36px;height:36px;border-radius:8px;
+    background:var(--sky);color:var(--blue);
+    display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  .ic-gold{background:#FFF4D6;color:#C68A00}
+  .ic-green{background:#E1F5E5;color:#2E8540}
+
+  /* ============ AUTHORITY STRIP ============ */
+  .auth-strip{
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+    padding:40px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .auth-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    text-align:center;
+  }
+  .auth-stat{
+    padding:0 20px;
+    border-right:1px solid var(--line);
+  }
+  .auth-stat:last-child{border:none}
+  .auth-stat .num{
+    font-family:'Sora',sans-serif;
+    font-weight:800;
+    font-size:clamp(32px,4vw,44px);
+    color:var(--blue);
+    line-height:1;letter-spacing:-.02em;
+    font-variant-numeric:tabular-nums;
+  }
+  .auth-stat .num .plus{color:var(--gold);margin-right:2px}
+  .auth-stat .lbl{
+    font-size:14px;color:var(--text-soft);
+    margin-top:8px;font-weight:500;
+  }
+
+  /* ============ REALITY ============ */
+  .reality{padding:120px 0;background:var(--paper)}
+  .reality-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:80px;align-items:center;
+  }
+  .section-tag{
+    display:inline-block;
+    font-size:12px;font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    color:var(--blue);
+    margin-bottom:16px;
+  }
+  .section-title{
+    font-family:'Sora',sans-serif;
+    font-weight:800;
+    font-size:clamp(30px,3.8vw,46px);
+    line-height:1.1;
+    letter-spacing:-.02em;
+    margin-bottom:24px;
+    color:var(--navy);
+  }
+  .section-title .blue{color:var(--blue)}
+  .reality-sub{
+    font-size:17px;color:var(--text-soft);
+    margin-bottom:32px;
+  }
+  .reality-list{list-style:none}
+  .reality-list li{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+    font-size:16px;
+  }
+  .reality-list li:last-child{border:none}
+  .reality-list .x{
+    flex-shrink:0;
+    width:26px;height:26px;border-radius:50%;
+    background:#FFE5E8;color:#D63B4A;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:13px;
+  }
+  .reality-img-wrap{position:relative}
+  .reality-img{
+    aspect-ratio:1/1;border-radius:50%;
+    background:url('https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=85') center/cover;
+    box-shadow:0 30px 80px rgba(10,31,61,.2);
+    border:8px solid var(--white);
+  }
+  .reality-badge{
+    position:absolute;top:20px;right:0;
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+    padding:14px 20px;border-radius:14px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+    display:flex;align-items:center;gap:12px;
+    font-size:14px;font-weight:600;
+    animation:float 4s ease-in-out infinite;
+  }
+
+  /* ============ ECONOMY (KILLER SECTION) ============ */
+  .economy{
+    padding:120px 0;
+    background:var(--paper);
+  }
+  .eco-header{text-align:center;max-width:720px;margin:0 auto 60px}
+  .eco-header p{font-size:17px;color:var(--text-soft);margin-top:12px}
+
+  .eco-comparison{
+    max-width:1000px;margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    gap:30px;align-items:stretch;
+  }
+  .eco-card{
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+    border-radius:24px;
+    padding:36px;
+    box-shadow:0 20px 50px rgba(10,31,61,.08);
+    position:relative;
+  }
+  .eco-card.bad{
+    border:2px solid #FFCDD2;
+  }
+  .eco-card.good{
+    background:linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 100%);
+    color:var(--white);
+    box-shadow:0 25px 60px rgba(30,136,229,.35);
+  }
+  .eco-card-label{
+    display:inline-block;
+    font-size:11px;font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.15em;
+    padding:6px 12px;border-radius:6px;
+    margin-bottom:16px;
+  }
+  .eco-card.bad .eco-card-label{background:#FFEBEE;color:#C62828}
+  .eco-card.good .eco-card-label{background:rgba(255,255,255,.25);color:var(--white)}
+  .eco-card h3{
+    font-family:'Sora',sans-serif;
+    font-size:22px;font-weight:800;
+    margin-bottom:20px;line-height:1.2;
+  }
+  .eco-item{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 0;
+    border-bottom:1px dashed rgba(10,31,61,.1);
+  }
+  .eco-card.good .eco-item{border-bottom-color:rgba(255,255,255,.2)}
+  .eco-item:last-of-type{border:none}
+  .eco-item-name{font-size:14px;line-height:1.3}
+  .eco-item-name small{display:block;opacity:.7;font-size:12px;margin-top:2px}
+  .eco-item-price{
+    font-family:'Sora',sans-serif;
+    font-weight:700;font-size:18px;
+    white-space:nowrap;
+  }
+  .eco-card.bad .eco-item-price{color:#C62828}
+  .eco-card.good .eco-item-price{color:var(--white)}
+  .eco-total{
+    margin-top:20px;padding-top:20px;
+    border-top:2px solid;
+    display:flex;justify-content:space-between;align-items:baseline;
+  }
+  .eco-card.bad .eco-total{border-color:#FFCDD2}
+  .eco-card.good .eco-total{border-color:rgba(255,255,255,.3)}
+  .eco-total-label{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.1em}
+  .eco-total-price{
+    font-family:'Sora',sans-serif;
+    font-weight:800;font-size:32px;
+    letter-spacing:-.02em;
+  }
+  .eco-vs{
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Sora',sans-serif;
+    font-weight:800;font-size:24px;
+    color:var(--navy);
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+    width:64px;height:64px;border-radius:50%;
+    box-shadow:0 10px 30px rgba(10,31,61,.15);
+    align-self:center;
+  }
+  .eco-conclusion{
+    max-width:800px;margin:50px auto 0;
+    text-align:center;
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+    padding:30px 40px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(10,31,61,.08);
+    border:2px solid var(--green);
+  }
+  .eco-conclusion h4{
+    font-family:'Sora',sans-serif;
+    font-size:26px;font-weight:800;
+    color:var(--navy);
+    margin-bottom:8px;
+  }
+  .eco-conclusion h4 span{color:var(--green)}
+  .eco-conclusion p{font-size:15px;color:var(--text-soft)}
+
+  /* ============ ABOUT / HOMI DAS VIAGENS ============ */
+  .about{
+    padding:120px 0;
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+    position:relative;
+  }
+  .about-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;
+    gap:80px;align-items:center;
+  }
+  .about-text h2{color:var(--navy)}
+  .about-title{min-height:1.1em}
+  .about-title .about-typed .blue{color:var(--blue)}
+  .about-cursor{
+    display:inline-block;
+    color:var(--blue);
+    font-weight:300;
+    margin-left:2px;
+    animation:about-blink 1s step-end infinite;
+  }
+  .about-cursor.is-hidden{opacity:0;animation:none}
+  @keyframes about-blink{
+    0%,50%{opacity:1}
+    51%,100%{opacity:0}
+  }
+  .about-text .sub-name{
+    font-family:'Sora',sans-serif;
+    font-size:18px;color:var(--blue);
+    font-weight:600;margin-top:-12px;margin-bottom:20px;
+  }
+  .about-text p{
+    font-size:17px;color:var(--text-soft);
+    margin-bottom:16px;line-height:1.6;
+  }
+  .about-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:32px;
+  }
+  .about-stat{
+    background:var(--paper);
+    padding:20px;border-radius:14px;
+    text-align:center;
+  }
+  .about-stat .num{
+    font-family:'Sora',sans-serif;
+    font-weight:800;font-size:28px;
+    color:var(--blue);line-height:1;
+  }
+  .about-stat .lbl{
+    font-size:12px;color:var(--text-soft);
+    margin-top:6px;font-weight:500;
+    text-transform:uppercase;letter-spacing:.08em;
+  }
+
+  /* Mosaic de fotos */
+  .about-mosaic{
+    position:relative;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr;
+    gap:12px;
+    height:580px;
+  }
+  .about-photo{
+    background-size:cover;background-position:center;
+    border-radius:16px;
+    box-shadow:0 15px 40px rgba(10,31,61,.15);
+  }
+  .about-photo-1{grid-row:1/3;grid-column:1}
+  .about-photo-2{grid-row:1;grid-column:2}
+  .about-photo-3{grid-row:2/4;grid-column:2}
+  .about-photo-4{grid-row:3;grid-column:1}
+  .about-badge{
+    position:absolute;
+    top:-20px;left:-20px;
+    background:var(--gold);
+    color:var(--navy);
+    padding:14px 22px;
+    border-radius:14px;
+    font-family:'Sora',sans-serif;
+    font-weight:800;
+    font-size:14px;
+    box-shadow:0 10px 30px rgba(255,200,87,.4);
+    z-index:3;
+    transform:rotate(-4deg);
+    line-height:1.2;
+  }
+  .about-badge small{display:block;font-size:11px;font-weight:500;margin-bottom:2px}
+
+  /* ============ SOLUÇÃO / FEATURES ============ */
+  .solution{padding:120px 0;background:var(--paper)}
+  .sol-header{text-align:center;max-width:720px;margin:0 auto 70px}
+  .sol-header p{font-size:17px;color:var(--text-soft);margin-top:8px}
+  .features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    max-width:1400px;
+    margin:0 auto;
+  }
+  .feature{
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;
+    padding:44px 36px;
+    border:1px solid var(--line);
+    transition:all .3s;
+    min-height:260px;
+    display:flex;flex-direction:column;
+  }
+  .feature:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 50px rgba(10,31,61,.1);
+    border-color:var(--blue);
+  }
+  .feature.highlight{
+    background:linear-gradient(135deg, #1E88E5 0%, #42A5F5 100%) !important;
+    color:var(--white);
+    border:none !important;
+    box-shadow:0 20px 50px rgba(30,136,229,.5), 0 0 0 2px rgba(66,165,245,.4);
+    position:relative;
+  }
+  .feature.highlight::before{
+    content:'★ DIFERENCIAL';
+    position:absolute;top:-10px;right:20px;
+    background:var(--gold);color:var(--navy);
+    padding:4px 10px;border-radius:6px;
+    font-size:10px;font-weight:800;letter-spacing:.1em;
+  }
+  .feature-icon{
+    width:52px;height:52px;border-radius:14px;
+    background:linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 100%);
+    color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;margin-bottom:20px;
+    box-shadow:0 8px 20px rgba(30,136,229,.3);
+  }
+  .feature.highlight .feature-icon{
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);color:var(--blue);
+  }
+  .feature h3{
+    font-family:'Sora',sans-serif;
+    font-size:20px;font-weight:700;
+    margin-bottom:10px;color:var(--navy);
+  }
+  .feature.highlight h3{color:var(--white)}
+  .feature p{font-size:15px;color:var(--text-soft)}
+  .feature.highlight p{color:rgba(255,255,255,.9)}
+
+  /* ============ DESTINOS (EBOOKS) ============ */
+  .destinations{
+    padding:120px 0;
+    background:var(--navy);
+    color:var(--white);
+    position:relative;overflow:hidden;
+  }
+  .destinations::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 70% 30%, rgba(30,136,229,.2), transparent 50%);
+  }
+  .dest-inner{position:relative;z-index:2}
+  .dest-header{text-align:center;max-width:680px;margin:0 auto 60px}
+  .dest-header .section-title{color:var(--white)}
+  .dest-header p{font-size:17px;color:rgba(255,255,255,.8);margin-top:12px}
+  /* ============ COMPARE ============ */
+  .compare{padding:120px 0;background:var(--paper)}
+  .compare-header{text-align:center;margin-bottom:60px}
+  .compare-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:24px;max-width:1000px;margin:0 auto;
+  }
+  .compare-card{
+    padding:40px;
+    border-radius:24px;
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+    border:2px solid var(--line);
+  }
+  .compare-card.bad{border-color:#FFCDD2}
+  .compare-card.good{
+    background:linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 100%);
+    color:var(--white);border:none;
+    box-shadow:0 20px 50px rgba(30,136,229,.3);
+  }
+  .compare-label{
+    display:inline-block;
+    font-size:12px;font-weight:700;
+    text-transform:uppercase;letter-spacing:.15em;
+    padding:6px 14px;border-radius:8px;
+    margin-bottom:20px;
+  }
+  .compare-card.bad .compare-label{background:#FFEBEE;color:#C62828}
+  .compare-card.good .compare-label{background:rgba(52,208,108,.18);color:#34D06C}
+  .compare-card h3{
+    font-family:'Sora',sans-serif;
+    font-size:26px;font-weight:800;
+    margin-bottom:24px;line-height:1.2;
+    color:var(--navy);
+  }
+  .compare-card.good h3{color:var(--white)}
+  .compare-card ul{list-style:none}
+  .compare-card li{
+    padding:12px 0;font-size:16px;
+    display:flex;gap:12px;align-items:flex-start;line-height:1.4;
+  }
+  .compare-card li::before{
+    flex-shrink:0;width:22px;height:22px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:700;margin-top:2px;
+  }
+  .compare-card.bad li::before{content:'✕';background:#FFEBEE;color:#C62828}
+  .compare-card.good li::before{content:'✓';background:#FFFFFF;color:var(--blue)}
+
+  /* ============ OFFER ============ */
+  .offer{
+    padding:120px 0;
+    background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--white);
+    position:relative;overflow:hidden;
+  }
+  .offer::before{
+    content:'';position:absolute;
+    top:-100px;right:-100px;width:400px;height:400px;
+    background:radial-gradient(circle, rgba(30,136,229,.25), transparent 60%);
+  }
+  .offer-inner{position:relative;z-index:2}
+  .offer-header{text-align:center;margin-bottom:60px}
+  .offer-header .section-title{color:var(--white)}
+  .offer-header .section-tag{color:var(--blue-light)}
+  .offer-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:24px;max-width:900px;margin:0 auto;
+  }
+  .offer-card{
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);color:var(--text);
+    padding:40px;border-radius:24px;
+    position:relative;
+  }
+  .offer-card.featured{
+    background:linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 100%);
+    color:var(--white);
+    transform:scale(1.04);
+    box-shadow:0 30px 80px rgba(30,136,229,.4);
+  }
+  .offer-badge{
+    position:absolute;top:-14px;right:24px;
+    background:var(--gold);color:var(--navy);
+    padding:6px 14px;border-radius:8px;
+    font-size:12px;font-weight:700;
+    text-transform:uppercase;letter-spacing:.1em;
+  }
+  .offer-card h3{
+    font-family:'Sora',sans-serif;
+    font-size:24px;font-weight:800;margin-bottom:8px;
+  }
+  .offer-card .desc{
+    font-size:14px;color:var(--text-soft);margin-bottom:24px;
+  }
+  .offer-card.featured .desc{color:rgba(255,255,255,.85)}
+  .price{
+    display:flex;align-items:baseline;gap:6px;margin-bottom:24px;
+  }
+  .price .currency{font-size:20px;font-weight:600}
+  .price .amount{
+    font-family:'Sora',sans-serif;
+    font-size:60px;font-weight:800;
+    line-height:1;letter-spacing:-.03em;
+  }
+  .price .period{font-size:14px;opacity:.7}
+  .price-bump{
+    display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px;margin-bottom:24px;
+  }
+  .price-bump .bump-off{
+    font-family:'Sora',sans-serif;
+    font-size:68px;font-weight:800;
+    line-height:1;letter-spacing:-.03em;
+  }
+  .price-bump .bump-lbl{
+    font-family:'Sora',sans-serif;
+    font-size:26px;font-weight:800;letter-spacing:.02em;
+    line-height:1;
+  }
+  .price-bump .bump-sub{
+    flex:1 1 100%;
+    font-size:13px;opacity:.85;font-weight:500;
+    margin-top:2px;
+  }
+  .offer-features{list-style:none;margin-bottom:32px}
+  .offer-features li{
+    padding:10px 0;font-size:15px;
+    display:flex;gap:10px;align-items:center;
+  }
+  .offer-features li::before{
+    content:'✓';color:#fff;font-weight:700;
+    width:18px;height:18px;border-radius:50%;
+    background:#22C55E;
+    display:flex;align-items:center;justify-content:center;font-size:11px;
+  }
+  .offer-card.featured .offer-features li::before{
+    color:#fff;background:#22C55E;border:1px solid rgba(255,255,255,.25);backdrop-filter:none;-webkit-backdrop-filter:none;
+  }
+  .offer-cta{
+    display:block;text-align:center;
+    background:var(--navy);color:var(--white);
+    padding:16px;border-radius:12px;
+    font-weight:700;text-decoration:none;
+    transition:transform .2s;
+  }
+  .offer-card.featured .offer-cta{
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);color:var(--navy);
+  }
+  .offer-cta:hover{transform:translateY(-2px)}
+  .discount-banner{
+    text-align:center;margin-top:40px;font-size:16px;
+  }
+  .discount-banner strong{
+    background:var(--gold);color:var(--navy);
+    padding:6px 14px;border-radius:8px;font-weight:700;
+  }
+
+  /* ============ GUARANTEE ============ */
+  .guarantee{padding:80px 0;background:var(--paper)}
+  .guarantee-card{
+    max-width:850px;margin:0 auto;
+    background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+    border:2px solid var(--blue);
+    border-radius:24px;padding:48px;
+    display:grid;grid-template-columns:auto 1fr;
+    gap:40px;align-items:center;
+    box-shadow:0 20px 60px rgba(30,136,229,.15);
+  }
+  .seal{
+    position:relative;
+    width:140px;height:140px;
+    flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    filter:drop-shadow(0 15px 30px rgba(30,136,229,.4));
+  }
+  .seal-shape{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    animation:sealSpin 18s linear infinite;
+  }
+  .seal-shape path{
+    fill:var(--blue-bright);
+    stroke:var(--blue-bright);
+    stroke-width:6;
+    stroke-linejoin:round;
+    stroke-linecap:round;
+  }
+  .seal-content{
+    position:relative;
+    z-index:2;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    color:var(--white);text-align:center;
+    width:70%;
+  }
+  @keyframes sealSpin{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+  }
+  .seal .num{
+    font-family:'Sora',sans-serif;
+    font-size:48px;font-weight:800;line-height:1;
+  }
+  .seal .lbl{
+    font-size:13px;font-weight:600;
+    margin-top:4px;letter-spacing:.1em;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .seal-shape{animation:none}
+  }
+  .guarantee-text h3{
+    font-family:'Sora',sans-serif;
+    font-size:26px;font-weight:800;
+    margin-bottom:10px;color:var(--navy);
+  }
+  .guarantee-text p{font-size:16px;color:var(--text-soft)}
+
+  /* ============ FAQ ============ */
+  .faq{padding:120px 0;background:transparent}
+  .faq-header{text-align:center;margin-bottom:60px}
+  .faq-list{max-width:760px;margin:0 auto}
+  .faq-item{
+    background:var(--paper);border-radius:14px;
+    margin-bottom:12px;overflow:hidden;
+    border:1px solid var(--line);
+    transition:border-color .2s;
+  }
+  .faq-item.open{border-color:var(--blue)}
+  .faq-q{
+    padding:22px 28px;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;
+    font-weight:600;font-size:17px;color:#fff;user-select:none;
+  }
+  .faq-q::after{
+    content:'+';font-size:24px;font-weight:300;
+    color:var(--blue);transition:transform .3s;
+  }
+  .faq-item.open .faq-q::after{transform:rotate(45deg)}
+  .faq-a{
+    max-height:0;overflow:hidden;
+    transition:max-height .3s ease, padding .3s ease;
+    padding:0 28px;color:var(--text-soft);font-size:15px;
+  }
+  .faq-item.open .faq-a{max-height:300px;padding:0 28px 22px}
+
+  /* ============ FINAL ============ */
+  .final{
+    padding:140px 0;
+    background:
+      linear-gradient(rgba(10,31,61,.85), rgba(10,31,61,.92)),
+      url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1600&q=85') center/cover;
+    color:var(--white);text-align:center;
+  }
+  .final h2{
+    font-family:'Sora',sans-serif;
+    font-size:clamp(34px,4.5vw,56px);
+    font-weight:800;line-height:1.1;
+    letter-spacing:-.02em;margin-bottom:20px;
+  }
+  .final h2 .blue{color:var(--blue-light)}
+  .final p{
+    font-size:19px;max-width:600px;
+    margin:0 auto 40px;opacity:.9;
+  }
+  .final .hero-cta{
+    background:var(--blue);
+    font-size:18px;padding:22px 44px;
+    box-shadow:0 12px 40px rgba(30,136,229,.5);
+  }
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--navy-deep);color:rgba(255,255,255,.7);
+    padding:50px 0 30px;text-align:center;font-size:14px;
+  }
+  footer .logo{justify-content:center;margin-bottom:16px}
+  footer .links{
+    margin:20px 0;display:flex;gap:24px;
+    justify-content:center;font-size:13px;
+  }
+  footer .links a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+  footer .links a:hover{color:var(--white)}
+  footer .copy{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:20px;margin-top:20px;
+    font-size:12px;opacity:.6;
+  }
+
+  /* WHATSAPP */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;
+    width:60px;height:60px;border-radius:50%;
+    background:#25D366;color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    font-size:28px;text-decoration:none;
+    box-shadow:0 8px 30px rgba(37,211,102,.5);
+    z-index:99;transition:transform .2s;
+    animation:pulse-wa 2.5s infinite;
+  }
+  .wa-float:hover{transform:scale(1.1)}
+
+  /* ANIMATIONS */
+  @keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.4)}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @keyframes pulse-wa{0%,100%{box-shadow:0 8px 30px rgba(37,211,102,.5)}50%{box-shadow:0 8px 40px rgba(37,211,102,.8)}}
+
+  /* RESPONSIVE */
+  /* ============ NOVOS CARDS DE DESTINOS ============ */
+  .dest-grid-new{
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px;
+    justify-content:center;
+    align-items:flex-start;
+  }
+  .dest-card-new{
+    flex:0 1 calc((100% - 48px) / 3);
+    max-width:calc((100% - 48px) / 3);
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .3s, border-color .3s;
+    color:#FFFFFF;
+  }
+  .dest-card-new:hover{
+    transform:translateY(-6px);
+    border-color:rgba(91,176,255,.35);
+  }
+  .dest-card-new *{color:#FFFFFF;}
+  .dest-card-new .dest-card-price{color:var(--blue-bright) !important;}
+  .dest-card-new .dest-card-duration,
+  .dest-card-new .dest-card-details p,
+  .dest-card-new .dest-card-details li{color:#B8C5D9 !important;}
+  .dest-card-new:hover{
+    transform:translateY(-6px);
+    box-shadow:0 25px 50px rgba(0,0,0,.25);
+  }
+  .dest-card-img{
+    aspect-ratio:16/10;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+  }
+  .dest-card-flag{
+    position:absolute;
+    top:14px;left:14px;
+    width:42px;height:42px;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(10px);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+  }
+  .dest-card-body{
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .dest-card-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:10px;
+  }
+  .dest-card-head h3{
+    font-family:'Sora',sans-serif;
+    font-size:18px;
+    font-weight:800;
+    color:var(--navy);
+    line-height:1.25;
+    flex:1;
+  }
+  .dest-card-price{
+    font-family:'Sora',sans-serif;
+    font-size:20px;
+    font-weight:800;
+    color:var(--blue);
+    white-space:nowrap;
+  }
+  .dest-card-duration{
+    font-size:14px;
+    color:var(--text-soft);
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .dest-card-toggle{
+    background:transparent;
+    border:none;
+    color:var(--blue);
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    cursor:pointer;
+    margin-bottom:14px;
+    transition:color .2s;
+  }
+  .dest-card-toggle:hover{color:var(--blue-bright)}
+  .dest-card-toggle svg{
+    transition:transform .3s;
+  }
+  .dest-card-new.open .dest-card-toggle svg{
+    transform:rotate(180deg);
+  }
+  .dest-card-details{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease, margin .4s ease;
+    opacity:0;
+  }
+  .dest-card-new.open .dest-card-details{
+    max-height:1000px;
+    margin-bottom:18px;
+    opacity:1;
+  }
+  .details-intro{
+    font-size:14px;
+    color:var(--text);
+    margin-bottom:16px;
+    padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+  }
+  .details-block{margin-bottom:16px}
+  .details-block:last-child{margin-bottom:0}
+  .details-block strong{
+    display:block;
+    font-family:'Sora',sans-serif;
+    font-size:13px;
+    color:var(--navy);
+    margin-bottom:10px;
+    font-weight:700;
+  }
+  .details-block ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .details-block li{
+    position:relative;
+    padding-left:18px;
+    font-size:13px;
+    color:var(--text-soft);
+    margin-bottom:6px;
+    line-height:1.45;
+  }
+  .details-block li::before{
+    content:'•';
+    position:absolute;
+    left:4px;
+    color:var(--blue);
+    font-weight:700;
+  }
+  .details-bonus{
+    background:rgba(91,176,255,.08);
+    padding:14px;
+    border-radius:10px;
+    border-left:3px solid var(--blue-bright);
+  }
+  .details-bonus strong{color:#FFFFFF !important}
+  .details-bonus li{color:#FFFFFF !important}
+  .details-bonus li::before{color:var(--blue-bright) !important}
+  .details-block strong{color:#FFFFFF !important}
+  .details-block li{color:#FFFFFF !important}
+  .details-block li::before{color:var(--blue-bright) !important}
+  .dest-card-cta{
+    margin-top:auto;
+    display:block;
+    text-align:center;
+    background:linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 100%);
+    color:#FFFFFF !important;
+    padding:14px;
+    border-radius:12px;
+    font-family:'Sora',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    text-decoration:none;
+    transition:all .2s;
+    box-shadow:0 4px 14px rgba(30,136,229,.25);
+  }
+  .dest-card-cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(30,136,229,.35);
+  }
+
+  @media(max-width:900px){
+    /* fix animação travada */
+    .hero-title,.hero-sub,.hero-cta,.hero-trust,.hero-visual{animation-fill-mode:forwards !important}
+    .hero{padding:40px 0 60px}
+    .hero-grid{grid-template-columns:1fr;gap:24px;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .hero-text{display:contents}
+    .hero-visual{max-width:380px;margin:0 auto;order:2}
+    .hero-tag{order:0;display:none !important}
+    .hero-title{order:1}
+    .hero-sub{order:3}
+    .hero-cta{order:4}
+    .hero-trust{order:5}
+    .nav-links{display:none}
+    .auth-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+    .auth-stat{border-right:none;padding:10px}
+    .auth-stat:nth-child(odd){border-right:1px solid var(--line)}
+    .reality-grid,.about-grid{grid-template-columns:1fr;gap:40px}
+    .eco-comparison{grid-template-columns:1fr;gap:20px}
+    .eco-vs{margin:0 auto;width:50px;height:50px;font-size:18px}
+    .features{grid-template-columns:1fr}
+    .dest-card-new{flex:0 1 calc((100% - 24px) / 2);max-width:calc((100% - 24px) / 2)}
+    .compare-grid{grid-template-columns:1fr}
+    .offer-grid{grid-template-columns:1fr}
+    .offer-card.featured{transform:none}
+    .guarantee-card{grid-template-columns:1fr;text-align:center;padding:32px;gap:20px}
+    .seal{margin:0 auto}
+    .about-mosaic{height:420px}
+    .about-badge{top:-10px;left:10px;transform:rotate(-2deg)}
+  }
+  
+  @media(max-width:640px){
+    /* Evita scroll horizontal */
+    html,body{overflow-x:hidden;max-width:100vw}
+    .container{padding:0 16px}
+    
+    /* TOPBAR - mais compacta */
+    .topbar{padding:8px 12px;font-size:11px;line-height:1.3}
+    .topbar strong{display:inline}
+    
+    /* NAV - logo grande, centralizada, sem menu */
+    nav{padding:10px 0}
+    .nav-inner{padding:0 16px;position:relative;justify-content:center}
+    .logo-img{height:70px}
+    nav .logo{
+      transform:none !important;
+    }
+    nav .menu, nav .nav-cta, nav .nav-links{display:none !important}
+    
+    /* HERO - ajustes pesados */
+    .hero{padding:30px 0 50px}
+    .hero-title{font-size:34px !important;line-height:1.1;margin-bottom:16px}
+    .hero-sub{font-size:16px;margin-bottom:24px}
+    .hero-cta{padding:16px 28px;font-size:15px;width:100%;justify-content:center}
+    .hero-trust{flex-direction:row;gap:10px;margin-top:0;justify-content:center}
+    .trust-text{font-size:12px;text-align:left}
+    .avatar{width:32px;height:32px;margin-left:-10px}
+    
+    /* HERO VISUAL - mantém a foto circular com os float-cards */
+    .hero-visual{max-width:340px;margin:0 auto;height:340px}
+    
+    /* AUTHORITY STRIP */
+    .auth-strip{padding:24px 0}
+    .auth-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+    .auth-stat{border:none !important;padding:8px}
+    .auth-stat .num{font-size:30px}
+    .auth-stat .lbl{font-size:12px}
+    
+    /* SEÇÕES GERAIS - menos padding */
+    .reality,.solution,.economy,.about,.destinations,.compare,.target,.offer,.faq,.final{
+      padding:60px 0;
+    }
+    .section-title{font-size:26px !important;line-height:1.15}
+    .section-tag{font-size:11px}
+    
+    /* ECONOMIA - cards empilhados certinho */
+    .eco-card{padding:24px 20px}
+    .eco-card h3{font-size:18px;margin-bottom:16px}
+    .eco-item{flex-direction:column;align-items:flex-start;gap:4px;padding:10px 0}
+    .eco-item-name{font-size:13px}
+    .eco-item-name small{font-size:11px}
+    .eco-item-price{font-size:16px}
+    .eco-total-price{font-size:26px}
+    .eco-conclusion{padding:24px 20px;margin-top:30px}
+    .eco-conclusion h4{font-size:20px}
+    
+    /* ABOUT */
+    .about-mosaic{height:320px;gap:8px}
+    .about-badge{
+      position:static;
+      transform:none;
+      margin:0 auto 20px;
+      display:inline-block;
+    }
+    .about-stats{display:none !important}
+    .about-stat .lbl{font-size:10px}
+    
+    /* DESTINOS */
+    .dest-grid-new{gap:16px}
+    .dest-card-new{flex:0 1 100%;max-width:420px}
+    .dest-card-body{padding:20px}
+    .dest-card-head h3{font-size:16px}
+    .dest-card-price{font-size:18px}
+    .dest-name{font-size:22px}
+    
+    /* FEATURES */
+    .feature{padding:24px 20px}
+    .feature h3{font-size:18px}
+    
+    /* COMPARE */
+    .compare-card{padding:24px 20px}
+    .compare-card h3{font-size:20px}
+    .compare-card li{font-size:14px}
+    
+    /* OFERTAS */
+    .offer-card{padding:28px 20px}
+    .price .amount{font-size:48px}
+    .offer-cta{padding:14px;font-size:14px}
+    
+    /* BANNER DE DESCONTO - CORRIGIR SOBREPOSIÇÃO */
+    .discount-banner{
+      font-size:14px;
+      line-height:1.6;
+      padding:0 10px;
+    }
+    .discount-banner strong{
+      display:inline-block;
+      margin:4px 0;
+      padding:4px 10px;
+      font-size:13px;
+    }
+    
+    /* GARANTIA */
+    .guarantee{padding:50px 0}
+    .guarantee-card{padding:28px 20px}
+    .seal{width:110px;height:110px}
+    .seal .num{font-size:40px}
+    .guarantee-text h3{font-size:20px}
+    .guarantee-text p{font-size:14px}
+    
+    /* FAQ */
+    .faq-q{padding:18px 20px;font-size:15px}
+    .faq-item.open .faq-a{padding:0 20px 18px;font-size:14px}
+    
+    /* FINAL CTA */
+    .final{padding:80px 16px}
+    .final h2{font-size:28px !important;line-height:1.15;margin-bottom:14px}
+    .final p{font-size:16px;margin-bottom:28px}
+    .final .hero-cta{font-size:15px;padding:16px 28px;width:100%;justify-content:center}
+    
+    /* FOOTER */
+    footer{padding:32px 0 20px}
+    .logo-img-footer{height:70px}
+    footer .links{flex-direction:column;gap:10px}
+    
+    /* WHATSAPP - menor e melhor posicionado */
+    .wa-float{
+      width:50px;height:50px;
+      font-size:22px;
+      bottom:16px;right:16px;
+    }
+  }
+  
+  @media(max-width:380px){
+    /* Telas BEM pequenas tipo iPhone SE */
+    h1.hero-title{font-size:28px !important}
+    .section-title{font-size:22px !important}
+    .logo-img{height:60px}
+    .price .amount{font-size:40px}
+    .auth-stat .num{font-size:24px}
+  }
+
+  /* ============ REVEAL ON SCROLL ============ */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    filter:blur(8px);
+    transition:opacity .7s ease-out, transform .7s ease-out, filter .7s ease-out;
+    will-change:opacity, transform, filter;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+  }
+  /* Stagger: elementos filhos com .reveal-stagger aparecem em sequência */
+  .reveal-stagger.is-visible > *{
+    opacity:0;
+    transform:translateY(22px);
+    filter:blur(6px);
+    animation:revealUp .7s ease-out forwards;
+  }
+  .reveal-stagger.is-visible > *:nth-child(1){animation-delay:.05s}
+  .reveal-stagger.is-visible > *:nth-child(2){animation-delay:.12s}
+  .reveal-stagger.is-visible > *:nth-child(3){animation-delay:.19s}
+  .reveal-stagger.is-visible > *:nth-child(4){animation-delay:.26s}
+  .reveal-stagger.is-visible > *:nth-child(5){animation-delay:.33s}
+  .reveal-stagger.is-visible > *:nth-child(6){animation-delay:.40s}
+  .reveal-stagger.is-visible > *:nth-child(7){animation-delay:.47s}
+  .reveal-stagger.is-visible > *:nth-child(8){animation-delay:.54s}
+  @keyframes revealUp{
+    to{opacity:1;transform:translateY(0);filter:blur(0);}
+  }
+  /* Section-level reveal: blur + fade + slide, reversível ao sair */
+  .sec-reveal{
+    opacity:0;
+    transform:translateY(34px);
+    filter:blur(10px);
+    transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1), filter .8s ease-out;
+    will-change:opacity, transform, filter;
+  }
+  .sec-reveal.is-in{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+  }
+  /* Acessibilidade: quem prefere menos movimento vê tudo estático */
+  @media (prefers-reduced-motion: reduce){
+    .reveal,
+    .reveal-stagger > *,
+    .sec-reveal{
+      opacity:1 !important;
+      transform:none !important;
+      filter:none !important;
+      animation:none !important;
+      transition:none !important;
+    }
+  }
+</style>
+<style>
+/* Mosaic replaced by 3D carousel (Homi das Viagens) */
+.hv-carousel{position:relative;width:100%;max-width:1100px;margin:0 auto;padding:20px 0 40px;perspective:1600px;user-select:none}
+.hv-carousel .about-badge{position:absolute;top:-10px;left:10px;z-index:20}
+.hv-stage{position:relative;height:520px;transform-style:preserve-3d}
+.hv-slide{position:absolute;top:50%;left:50%;width:380px;height:480px;margin:-240px 0 0 -190px;border-radius:24px;background-size:cover;background-position:center;box-shadow:0 20px 50px rgba(10,31,61,.25);transition:transform .9s cubic-bezier(.22,.61,.36,1),opacity .9s ease,filter .9s ease,z-index 0s linear .45s;will-change:transform,opacity,filter;opacity:0;pointer-events:none;cursor:pointer}
+.hv-slide.is-center{transform:translateX(0) translateZ(0) scale(1.05);opacity:1;filter:blur(0) brightness(1);z-index:5;pointer-events:auto;transition-delay:0s}
+.hv-slide.is-left{transform:translateX(-300px) translateZ(-200px) scale(.82);opacity:.1;filter:blur(30px);z-index:3;pointer-events:auto;box-shadow:none}
+.hv-slide.is-right{transform:translateX(300px) translateZ(-200px) scale(.82);opacity:.1;filter:blur(30px);z-index:3;pointer-events:auto;box-shadow:none}
+.hv-slide.is-far-left{transform:translateX(-460px) translateZ(-400px) scale(.7);opacity:.04;filter:blur(40px);z-index:1;box-shadow:none}
+.hv-slide.is-far-right{transform:translateX(460px) translateZ(-400px) scale(.7);opacity:.04;filter:blur(40px);z-index:1;box-shadow:none}
+.hv-nav{display:none !important}
+.hv-nav:hover{transform:translateY(-50%) scale(1.1);background:#F5F8FC}
+.hv-prev{left:10px}
+.hv-next{right:10px}
+.hv-dots{display:flex;justify-content:center;gap:10px;margin-top:24px}
+.hv-dot{width:10px;height:10px;border-radius:50%;border:none;background:rgba(10,31,61,.2);cursor:pointer;transition:all .3s ease;padding:0}
+.hv-dot.is-active{background:var(--blue);width:30px;border-radius:5px}
+@media (max-width:768px){
+  .hv-stage{height:440px}
+  .hv-slide{width:280px;height:360px;margin:-180px 0 0 -140px;border-radius:18px}
+  .hv-slide.is-left{transform:translateX(-170px) translateZ(-150px) scale(.8) rotateY(12deg)}
+  .hv-slide.is-right{transform:translateX(170px) translateZ(-150px) scale(.8) rotateY(-12deg)}
+  .hv-slide.is-far-left{transform:translateX(-260px) translateZ(-300px) scale(.6) rotateY(18deg)}
+  .hv-slide.is-far-right{transform:translateX(260px) translateZ(-300px) scale(.6) rotateY(-18deg)}
+  .hv-nav{width:44px;height:44px;font-size:26px}
+  .hv-prev{left:4px}
+  .hv-next{right:4px}
+}
+@media (max-width:640px){
+  .hv-carousel{padding:10px 0 30px}
+  .hv-stage{height:380px}
+  .hv-slide{width:230px;height:300px;margin:-150px 0 0 -115px}
+}
+</style>
+</head>
+<body class="sticky-visible" style="cursor: crosshair; background-color: rgb(0, 13, 32);" data-cc-id="cc-1">
+
+<!-- TOPBAR -->
+<div class="topbar">
+  ✈️ <strong>Oferta ativa:</strong> 20% OFF automático na compra de 2 ou mais roteiros
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo" style="transform: translate(479px, 49px);">
+      <img src="assets/logo.png" loading="lazy" alt="Roteiro das Viagens" class="logo-img">
+    </a>
+    <a href="#oferta" class="nav-cta" style="display:none">Comprar agora</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" data-cc-id="cc-25">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="hero-tag hero-tag-aggressive">
+        <span class="dot"></span>
+        ATENÇÃO: Viajantes desperdiçando 1.000€ por mês
+      </div>
+      <h1 class="hero-title">Economize até <span class="gold">1.000€</span> e <span class="accent">semanas</span> de planejamento na sua viagem</h1>
+      <p class="hero-sub">Roteiros completos dia a dia, com os principais pontos turísticos, links de compra direto no PDF e tudo testado por quem já conhece <strong>38 países</strong>. Você abre e segue.</p>
+      <a href="#destinos" class="hero-cta" style="color: rgb(255, 255, 255);" data-cc-id="cc-24">Ver roteiros disponíveis</a>
+      <div class="hero-trust">
+        <div class="avatars" id="heroAvatars">
+          <div class="avatar" data-slot="0"><div class="av-layer is-active" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&amp;q=80')"></div><div class="av-layer"></div></div>
+          <div class="avatar" data-slot="1"><div class="av-layer is-active" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&amp;q=80')"></div><div class="av-layer"></div></div>
+          <div class="avatar" data-slot="2"><div class="av-layer is-active" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&amp;q=80')"></div><div class="av-layer"></div></div>
+          <div class="avatar" data-slot="3"><div class="av-layer is-active" style="background-image:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&amp;q=80')"></div><div class="av-layer"></div></div>
+        </div>
+        <div class="trust-text">
+          <div class="stars">★★★★★</div>
+          <strong>+500 viajantes</strong> já usaram
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-circle"></div>
+      <div class="float-card float-1">
+        <div class="float-icon">📅</div>
+        <div>Dia a dia<br><span style="font-weight:400;color:var(--text-soft);font-size:12px">já montado</span></div>
+      </div>
+      <div class="float-card float-2">
+        <div class="float-icon ic-gold">🎫</div>
+        <div>Links de compra<br><span style="font-weight:400;color:var(--text-soft);font-size:12px">dentro do PDF</span></div>
+      </div>
+      <div class="float-card float-3">
+        <div class="float-icon ic-green">✓</div>
+        <div>Restaurantes<br><span style="font-weight:400;color:var(--text-soft);font-size:12px">testados</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORITY STRIP -->
+<div class="auth-strip">
+  <div class="container">
+    <div class="auth-grid">
+      <div class="auth-stat">
+        <div class="num"><span class="plus">+</span><span class="count" data-target="11">11</span></div>
+        <div class="lbl">Anos de experiência em turismo</div>
+      </div>
+      <div class="auth-stat">
+        <div class="num"><span class="plus">+</span><span class="count" data-target="38">38</span></div>
+        <div class="lbl">Países conhecidos</div>
+      </div>
+      <div class="auth-stat">
+        <div class="num"><span class="count" data-target="32">32</span></div>
+        <div class="lbl">Deles só na Europa</div>
+      </div>
+      <div class="auth-stat">
+        <div class="num"><span class="plus">+</span><span class="count" data-target="500">500</span></div>
+        <div class="lbl">Viajantes atendidos</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTION / FEATURES -->
+<section class="solution">
+  <div class="container">
+    <div class="sol-header reveal is-visible">
+      <div class="section-tag">O que tem dentro do eBook</div>
+      <h2 class="section-title">Seu roteiro, <span class="blue">pronto e completo</span></h2>
+      <p>Cada eBook é um PDF organizado, prático e sem enrolação. Você abre no celular ou imprime — e segue.</p>
+    </div>
+    <div class="features reveal-stagger reveal is-visible">
+      <div class="feature">
+        <div class="feature-icon">📅</div>
+        <h3>Dia a dia detalhado</h3>
+        <p>4 dias completos por cidade, divididos em manhã, tarde e noite.</p>
+      </div>
+      <div class="feature highlight">
+        <div class="feature-icon">🎫</div>
+        <h3>Links de compra dentro do PDF</h3>
+        <p>Entrada de museu, tour, transporte — tudo com link direto pra comprar sem ficar procurando.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⏰</div>
+        <h3>Melhor horário pra cada atração</h3>
+        <p>Pra você evitar fila, multidão e aproveitar ao máximo.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🍽️</div>
+        <h3>Restaurantes testados</h3>
+        <p>Lugares aprovados na prática, longe de furada de turista.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🚇</div>
+        <h3>Como chegar em cada lugar</h3>
+        <p>Rota explicada: metrô, a pé ou táxi — do jeito mais rápido.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚠️</div>
+        <h3>Dicas que evitam erros</h3>
+        <p>Avisos práticos pra você não cair nas mesmas ciladas que todo mundo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINOS / EBOOKS -->
+<section class="destinations" id="destinos">
+  <div class="container dest-inner">
+    <div class="dest-header reveal is-visible">
+      <div class="section-tag" style="color:var(--blue-light)">eBooks disponíveis</div>
+      <h2 class="section-title">Escolha <span style="color:var(--blue-light)">seu destino</span></h2>
+      <p>Cada eBook é um roteiro completo de 4 dias, com tudo pra você só abrir e seguir.</p>
+    </div>
+    
+    <div class="dest-grid-new reveal-stagger reveal is-visible">
+      
+      <!-- PARIS -->
+      <div class="dest-card-new" data-card-id="1" id="card-1">
+        <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700&amp;q=85')">
+          <div class="dest-card-flag">🇫🇷</div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-card-head">
+            <h3>Roteiro Paris + Bônus</h3>
+            <div class="dest-card-price">R$ 107</div>
+          </div>
+          <div class="dest-card-duration">⏱ 4 dias</div>
+          <button class="dest-card-toggle" onclick="toggleDetails(this)">
+            <span>Detalhes</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <div class="dest-card-details">
+            <p class="details-intro">Roteiro completo para uma viagem de <strong>4 dias em Paris</strong>.</p>
+            <div class="details-block">
+              <strong>O que você vai encontrar:</strong>
+              <ul>
+                <li>Roteiro dia a dia (manhã, tarde, noite)</li>
+                <li>Links diretos pra comprar ingressos</li>
+                <li>Melhores horários de cada atração</li>
+                <li>Como chegar (metrô, transporte)</li>
+                <li>Sugestões de restaurantes</li>
+              </ul>
+            </div>
+            <div class="details-block details-bonus">
+              <strong>Bônus inclusos:</strong>
+              <ul>
+                <li>Como ir do aeroporto ao hotel</li>
+                <li>Melhores hotéis e bairros</li>
+                <li>5 cidades bate e volta</li>
+                <li>Cafés e restaurantes imperdíveis</li>
+                <li>Guia de eSIM + cartão Wise</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://pay.cakto.com.br/myjibdr_848876" class="dest-card-cta" target="_blank" rel="noopener">Comprar agora</a>
+        </div>
+      </div>
+      
+      <!-- ROMA -->
+      <div class="dest-card-new" data-card-id="2" id="card-2">
+        <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=700&amp;q=85')">
+          <div class="dest-card-flag">🇮🇹</div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-card-head">
+            <h3>Roteiro Roma + Bônus</h3>
+            <div class="dest-card-price">R$ 107</div>
+          </div>
+          <div class="dest-card-duration">⏱ 4 dias</div>
+          <button class="dest-card-toggle" onclick="toggleDetails(this)">
+            <span>Detalhes</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <div class="dest-card-details">
+            <p class="details-intro">Roteiro completo para uma viagem de <strong>4 dias em Roma</strong>.</p>
+            <div class="details-block">
+              <strong>O que você vai encontrar:</strong>
+              <ul>
+                <li>Roteiro dia a dia (manhã, tarde, noite)</li>
+                <li>Links diretos pra comprar ingressos</li>
+                <li>Melhores horários de cada atração</li>
+                <li>Como chegar (metrô, transporte)</li>
+                <li>Sugestões de restaurantes</li>
+              </ul>
+            </div>
+            <div class="details-block details-bonus">
+              <strong>Bônus inclusos:</strong>
+              <ul>
+                <li>Como ir do aeroporto ao hotel</li>
+                <li>Melhores hotéis e bairros</li>
+                <li>5 cidades bate e volta</li>
+                <li>Cafés e restaurantes imperdíveis</li>
+                <li>Guia de eSIM + cartão Wise</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://pay.cakto.com.br/6c95pi5" class="dest-card-cta" target="_blank" rel="noopener">Comprar agora</a>
+        </div>
+      </div>
+      
+      <!-- VENEZA -->
+      <div class="dest-card-new" data-card-id="3" id="card-3">
+        <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=700&amp;q=85')">
+          <div class="dest-card-flag">🇮🇹</div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-card-head">
+            <h3>Roteiro Veneza + Bônus</h3>
+            <div class="dest-card-price">R$ 107</div>
+          </div>
+          <div class="dest-card-duration">⏱ 4 dias</div>
+          <button class="dest-card-toggle" onclick="toggleDetails(this)">
+            <span>Detalhes</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <div class="dest-card-details">
+            <p class="details-intro">Roteiro completo para uma viagem de <strong>4 dias em Veneza</strong>.</p>
+            <div class="details-block">
+              <strong>O que você vai encontrar:</strong>
+              <ul>
+                <li>Roteiro dia a dia (manhã, tarde, noite)</li>
+                <li>Links diretos pra comprar ingressos</li>
+                <li>Melhores horários de cada atração</li>
+                <li>Como chegar (metrô, transporte)</li>
+                <li>Sugestões de restaurantes</li>
+              </ul>
+            </div>
+            <div class="details-block details-bonus">
+              <strong>Bônus inclusos:</strong>
+              <ul>
+                <li>Como ir do aeroporto ao hotel</li>
+                <li>Melhores hotéis e bairros</li>
+                <li>5 cidades bate e volta</li>
+                <li>Cafés e restaurantes imperdíveis</li>
+                <li>Guia de eSIM + cartão Wise</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://pay.cakto.com.br/ds6vxy6" class="dest-card-cta" target="_blank" rel="noopener">Comprar agora</a>
+        </div>
+      </div>
+      
+      <!-- FLORENÇA -->
+      <div class="dest-card-new" data-card-id="4" id="card-4">
+        <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=700&amp;q=85')">
+          <div class="dest-card-flag">🇮🇹</div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-card-head">
+            <h3>Roteiro Florença + Bônus</h3>
+            <div class="dest-card-price">R$ 107</div>
+          </div>
+          <div class="dest-card-duration">⏱ 4 dias</div>
+          <button class="dest-card-toggle" onclick="toggleDetails(this)">
+            <span>Detalhes</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <div class="dest-card-details">
+            <p class="details-intro">Roteiro completo para uma viagem de <strong>4 dias em Florença</strong>.</p>
+            <div class="details-block">
+              <strong>O que você vai encontrar:</strong>
+              <ul>
+                <li>Roteiro dia a dia (manhã, tarde, noite)</li>
+                <li>Links diretos pra comprar ingressos</li>
+                <li>Melhores horários de cada atração</li>
+                <li>Como chegar (metrô, transporte)</li>
+                <li>Sugestões de restaurantes</li>
+              </ul>
+            </div>
+            <div class="details-block details-bonus">
+              <strong>Bônus inclusos:</strong>
+              <ul>
+                <li>Como ir do aeroporto ao hotel</li>
+                <li>Melhores hotéis e bairros</li>
+                <li>5 cidades bate e volta</li>
+                <li>Cafés e restaurantes imperdíveis</li>
+                <li>Guia de eSIM + cartão Wise</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://pay.cakto.com.br/6y7boms" class="dest-card-cta" target="_blank" rel="noopener">Comprar agora</a>
+        </div>
+      </div>
+      
+      <!-- MILÃO -->
+      <div class="dest-card-new" data-card-id="5" id="card-5">
+        <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1610016302534-6f67f1c968d8?w=700&amp;q=85')">
+          <div class="dest-card-flag">🇮🇹</div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-card-head">
+            <h3>Roteiro Milão + Bônus</h3>
+            <div class="dest-card-price">R$ 107</div>
+          </div>
+          <div class="dest-card-duration">⏱ 4 dias</div>
+          <button class="dest-card-toggle" onclick="toggleDetails(this)">
+            <span>Detalhes</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <div class="dest-card-details">
+            <p class="details-intro">Roteiro completo para uma viagem de <strong>4 dias em Milão</strong>.</p>
+            <div class="details-block">
+              <strong>O que você vai encontrar:</strong>
+              <ul>
+                <li>Roteiro dia a dia (manhã, tarde, noite)</li>
+                <li>Links diretos pra comprar ingressos</li>
+                <li>Melhores horários de cada atração</li>
+                <li>Como chegar (metrô, transporte)</li>
+                <li>Sugestões de restaurantes</li>
+              </ul>
+            </div>
+            <div class="details-block details-bonus">
+              <strong>Bônus inclusos:</strong>
+              <ul>
+                <li>Como ir do aeroporto ao hotel</li>
+                <li>Melhores hotéis e bairros</li>
+                <li>5 cidades bate e volta</li>
+                <li>Cafés e restaurantes imperdíveis</li>
+                <li>Guia de eSIM + cartão Wise</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://pay.cakto.com.br/8mi73e7" class="dest-card-cta" target="_blank" rel="noopener">Comprar agora</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / HOMI DAS VIAGENS -->
+
+<!-- ECONOMY (KILLER SECTION) -->
+<section class="economy" id="economia" data-cc-id="cc-2" style="color: rgb(0, 0, 0);">
+  <div class="container" style="color: rgb(0, 0, 0);">
+    <div class="eco-header reveal is-visible" style="color: rgb(0, 0, 0);">
+      <div class="section-tag" style="color: rgb(0, 0, 0);">A conta que você não fez</div>
+      <h2 class="section-title" style="color: rgb(0, 0, 0);">Quanto você vai <span class="blue" style="color: rgb(0, 0, 0);" data-cc-id="cc-3">economizar</span> de verdade</h2>
+      <p style="color: rgb(0, 0, 0);">A maioria das pessoas paga caro pra planejar viagem — em consultoria, em tempo, ou em erros na hora. Olha a comparação:</p>
+    </div>
+
+    <div class="eco-comparison reveal is-visible" style="color: rgb(0, 0, 0);">
+      <div class="eco-card bad" style="color: rgb(0, 0, 0); border-color: rgb(151, 0, 15);">
+        <span class="eco-card-label" style="color: rgb(0, 0, 0); background-color: rgb(119, 0, 18);">Sem o roteiro</span>
+        <h3 style="color: rgb(0, 0, 0);">O que uma viagem mal planejada te custa</h3>
+        <div class="eco-item" style="color: rgb(0, 0, 0);">
+          <div class="eco-item-name" style="color: rgb(0, 0, 0);">Consultoria com agência<small style="color: rgb(0, 0, 0);">Pra te montar um roteiro</small></div>
+          <div class="eco-item-price" style="color: rgb(0, 0, 0);">250€</div>
+        </div>
+        <div class="eco-item" style="color: rgb(0, 0, 0);">
+          <div class="eco-item-name" style="color: rgb(0, 0, 0);">Tempo seu pesquisando<small style="color: rgb(0, 0, 0);">40h planejando em vez de curtir</small></div>
+          <div class="eco-item-price" style="color: rgb(0, 0, 0);">300€</div>
+        </div>
+        <div class="eco-item" style="color: rgb(0, 0, 0);">
+          <div class="eco-item-name" style="color: rgb(0, 0, 0);">Armadilhas de turista<small style="color: rgb(0, 0, 0);">Restaurantes ruins, filas, Uber caro</small></div>
+          <div class="eco-item-price" style="color: rgb(0, 0, 0);">250€</div>
+        </div>
+        <div class="eco-item" style="color: rgb(0, 0, 0);">
+          <div class="eco-item-name" style="color: rgb(0, 0, 0);">Atrações que deixou de ver<small style="color: rgb(0, 0, 0);">Voltar pra revisitar custa fortuna</small></div>
+          <div class="eco-item-price" style="color: rgb(0, 0, 0);">200€</div>
+        </div>
+        <div class="eco-total" style="color: rgb(0, 0, 0);">
+          <div class="eco-total-label" style="color: rgb(0, 0, 0);">Total perdido</div>
+          <div class="eco-total-price" style="color: rgb(0, 0, 0);">1.000€</div>
+        </div>
+      </div>
+
+      <div class="eco-vs" style="color: rgb(0, 0, 0);">VS</div>
+
+      <div class="eco-card good" style="color: rgb(0, 0, 0);">
+        <span class="eco-card-label" style="color: rgb(0, 0, 0); background-color: rgb(41, 128, 0);">Com o roteiro</span>
+        <h3 style="color: rgb(0, 0, 0);">O que você investe e já resolve tudo</h3>
+        <div class="eco-item" style="color: rgb(0, 0, 0);">
+          <div class="eco-item-name" style="color: rgb(0, 0, 0);">Roteiro completo em PDF<small style="color: rgb(0, 0, 0);">Dia a dia com manhã, tarde e noite</small></div>
+          <div class="eco-item-price" style="color: rgb(0, 0, 0);">R$ 107</div>
+        </div>
+        <div class="eco-item" style="color: rgb(0, 0, 0);">
+          <div class="eco-item-name" style="color: rgb(0, 0, 0);">Tempo pesquisando<small style="color: rgb(0, 0, 0);">Zero. Você só abre e segue</small></div>
+          <div class="eco-item-price" style="color: rgb(0, 0, 0);">R$ 0</div>
+        </div>
+        <div class="eco-item" style="color: rgb(0, 0, 0);">
+          <div class="eco-item-name" style="color: rgb(0, 0, 0);">Links de compra no PDF<small style="color: rgb(0, 0, 0);">Compra entrada e tour sem procurar</small></div>
+          <div class="eco-item-price" style="color: rgb(0, 0, 0);">Incluso</div>
+        </div>
+        <div class="eco-item" style="color: rgb(0, 0, 0);">
+          <div class="eco-item-name" style="color: rgb(0, 0, 0);">Restaurantes e dicas testadas<small style="color: rgb(0, 0, 0);">Nada de cair em furada</small></div>
+          <div class="eco-item-price" style="color: rgb(0, 0, 0);">Incluso</div>
+        </div>
+        <div class="eco-total" style="color: rgb(0, 0, 0);">
+          <div class="eco-total-label" style="color: rgb(0, 0, 0);">Investimento total</div>
+          <div class="eco-total-price" style="color: rgb(0, 0, 0);">R$ 107</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eco-conclusion reveal is-visible" style="color: rgb(0, 0, 0); font-weight: 500; padding: 30px 40px 10px;">
+      <h4 style="color: rgb(0, 0, 0);">Você economiza <span style="color: rgb(0, 0, 0);">até 1.000€</span> na prática</h4>
+      <p style="color: rgb(0, 0, 0);">E ainda aproveita 100% da viagem. O roteiro custa menos do que um 
+almoço em Paris e pode salvar a viagem inteira.
+
+</p>
+    </div>
+  </div>
+</section>
+
+<!-- REALITY -->
+
+<!-- COMPARE -->
+
+<!-- OFFER -->
+<section class="offer" id="oferta" data-cc-id="cc-18">
+  <div class="container offer-inner">
+    <div class="offer-header reveal is-visible">
+      <div class="section-tag">Escolha seu plano</div>
+      <h2 class="section-title">Comece sua viagem <span style="color:var(--blue-light)">do jeito certo</span></h2>
+    </div>
+    <div class="offer-grid reveal-stagger reveal is-visible">
+      <div class="offer-card">
+        <h3>Roteiro Individual</h3>
+        <p class="desc">Pra quem vai pra um destino só</p>
+        <div class="price">
+          <span class="currency">R$</span>
+          <span class="amount">107</span>
+          <span class="period">à vista</span>
+        </div>
+        <ul class="offer-features">
+          <li>1 destino completo (4 dias)</li>
+          <li>Manhã, tarde e noite organizados</li>
+          <li>Links de compra no PDF</li>
+          <li>Restaurantes e atrações testados</li>
+          <li>Acesso vitalício + atualizações</li>
+        </ul>
+        <a href="#" class="offer-cta" style="background-color: rgb(159, 239, 114); color: rgb(0, 20, 74);">Comprar agora</a>
+      </div>
+      <div class="offer-card featured" data-cc-id="cc-22">
+        <span class="offer-badge" style="background-color: rgb(159, 239, 114); font-size: 16px;">Oferta extra</span>
+        <h3>Leve 2 ou mais e economize</h3>
+        <p class="desc">10% OFF automático a partir do 2º roteiro</p>
+        <div class="price price-bump">
+          <span class="bump-off">10%</span>
+          <span class="bump-lbl">OFF</span>
+          <span class="bump-sub">a partir do 2º roteiro</span>
+        </div>
+        <ul class="offer-features">
+          <li>Desconto aplicado automático no checkout</li>
+          <li>Vale pra qualquer combinação de destinos</li>
+          <li>Sem cupom, sem código</li>
+          <li>Cada roteiro chega separado no e-mail</li>
+          <li>Acesso vitalício + atualizações</li>
+        </ul>
+        <a href="#destinos" class="offer-cta" style="background-color: rgb(159, 239, 114);">Ver todos os destinos</a>
+      </div>
+    </div>
+    <div class="discount-banner reveal is-visible" style="width: 1152px;">
+      Comprou 2 ou mais? <strong style="font-size: 15px; font-weight: 600; text-align: center; padding: 5px 9px 6px; margin: 10px; border-width: 1px;">20% OFF aplicado automaticamente</strong> no checkout
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee" data-cc-id="cc-19">
+  <div class="container" data-cc-id="cc-16">
+    <div class="guarantee-card reveal is-visible" data-cc-id="cc-14">
+      <div class="seal">
+        <svg class="seal-shape" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 50.00 2.00 L 56.26 10.49 L 64.83 4.35 L 68.16 14.36 L 78.21 11.17 L 78.28 21.72 L 88.83 21.79 L 85.64 31.84 L 95.65 35.17 L 89.51 43.74 L 98.00 50.00 L 89.51 56.26 L 95.65 64.83 L 85.64 68.16 L 88.83 78.21 L 78.28 78.28 L 78.21 88.83 L 68.16 85.64 L 64.83 95.65 L 56.26 89.51 L 50.00 98.00 L 43.74 89.51 L 35.17 95.65 L 31.84 85.64 L 21.79 88.83 L 21.72 78.28 L 11.17 78.21 L 14.36 68.16 L 4.35 64.83 L 10.49 56.26 L 2.00 50.00 L 10.49 43.74 L 4.35 35.17 L 14.36 31.84 L 11.17 21.79 L 21.72 21.72 L 21.79 11.17 L 31.84 14.36 L 35.17 4.35 L 43.74 10.49 Z" data-cc-id="cc-13" style="stroke: rgb(97, 173, 245); fill: rgb(0, 0, 0); opacity: 0.3;"></path>
+        </svg>
+        <div class="seal-content" data-cc-id="cc-15" style="color: rgb(89, 175, 255);">
+          <span class="num" style="color: rgb(89, 175, 255);" data-cc-id="cc-12">7</span>
+          <span class="lbl" style="color: rgb(89, 175, 255);">DIAS</span>
+        </div>
+      </div>
+      <div class="guarantee-text">
+        <h3 style="color: rgb(255, 255, 255);" data-cc-id="cc-17">Garantia incondicional de 7 dias</h3>
+        <p style="" data-cc-id="cc-20">Comprou, abriu e não curtiu? Manda um e-mail e devolvo 100% do seu dinheiro. Sem perguntas, sem burocracia. O risco é todo meu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" data-cc-id="cc-11">
+  <div class="container" data-cc-id="cc-7">
+    <div class="faq-header">
+      <div class="section-tag">Perguntas frequentes</div>
+      <h2 class="section-title reveal is-visible" style="color: rgb(255, 255, 255);" data-cc-id="cc-10">Ainda com <span class="blue" style="color: rgb(255, 255, 255);" data-cc-id="cc-9">dúvida</span>?</h2>
+    </div>
+    <div class="faq-list reveal is-visible">
+      <div class="faq-item">
+        <div class="faq-q" style="" data-cc-id="cc-8">Como recebo o roteiro depois da compra?</div>
+        <div class="faq-a">Logo após o pagamento ser aprovado, você recebe o link de acesso por e-mail e WhatsApp. O PDF fica disponível pra download imediato.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Os links de compra das atrações estão onde?</div>
+        <div class="faq-a">Dentro do próprio PDF. Cada atração tem o link direto pra você comprar ingresso, tour ou passe sem precisar ficar procurando em site nenhum.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Funciona pra quem nunca viajou pra Europa?</div>
+        <div class="faq-a">Sim, foi feito exatamente pra isso. O roteiro é tão detalhado que você não precisa entender nada de planejamento — é só abrir e seguir.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Posso usar no celular?</div>
+        <div class="faq-a">Pode. O PDF é otimizado pra leitura no celular, com links clicáveis pra Google Maps e tudo que você precisar acessar na hora.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Os preços e horários estão atualizados?</div>
+        <div class="faq-a">Sim. E se algo mudar, você recebe a atualização gratuitamente — acesso vitalício significa que está sempre na versão mais nova.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E se eu não gostar?</div>
+        <div class="faq-a">Você tem 7 dias pra pedir reembolso 100%. Sem pergunta, sem burocracia. Risco zero.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <a href="#" class="logo">
+      <img src="assets/logo.png" loading="lazy" alt="Roteiro das Viagens" class="logo-img logo-img-footer">
+    </a>
+    <div class="links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">Contato</a>
+    </div>
+    <div class="copy">
+      © 2026 Roteiro das Viagens · Todos os direitos reservados
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/5500000000000" class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+  </svg>
+</a>
+
+<!-- SOCIAL PROOF NOTIFICATION -->
+<div id="social-notification" class="notification show">
+  <div class="notif-icon">
+    <span id="notif-emoji">🎉</span>
+  </div>
+  <div class="notif-content">
+    <div class="notif-title" id="notif-title">Nova compra!</div>
+    <div class="notif-text" id="notif-text"><strong>Carlos</strong> garantiu o roteiro de <strong>Roma</strong></div>
+    <div class="notif-time" id="notif-time">há 4 minutos</div>
+  </div>
+  <button class="notif-close" onclick="hideNotification()" aria-label="Fechar">×</button>
+</div>
+
+<style>
+  /* NOTIFICAÇÃO DE PROVA SOCIAL */
+  .notification{
+    position:fixed;
+    bottom:24px;
+    left:24px;
+    background:#fff;
+    color:var(--text);
+    padding:14px 16px;
+    padding-right:36px;
+    border-radius:14px;
+    box-shadow:0 10px 40px rgba(0,0,0,.25), 0 0 0 1px rgba(0,0,0,.05);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    max-width:340px;
+    z-index:98;
+    opacity:0;
+    transform:translateX(-400px);
+    transition:transform .5s cubic-bezier(.34,1.56,.64,1), opacity .3s;
+    pointer-events:none;
+    font-family:'Plus Jakarta Sans',sans-serif;
+  }
+  .notification.show{
+    opacity:1;
+    transform:translateX(0);
+    pointer-events:auto;
+  }
+  .notif-icon{
+    flex-shrink:0;
+    width:44px;height:44px;
+    border-radius:10px;
+    background:linear-gradient(135deg, #1E88E5 0%, #2196F3 100%);
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;
+  }
+  .notif-content{flex:1;min-width:0}
+  .notif-title{
+    font-family:'Sora',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    color:var(--navy);
+    margin-bottom:2px;
+    line-height:1.3;
+  }
+  .notif-text{
+    font-size:12px;
+    color:var(--text-soft);
+    line-height:1.35;
+    margin-bottom:3px;
+  }
+  .notif-text strong{color:var(--navy)}
+  .notif-time{
+    font-size:10px;
+    color:#999;
+    display:flex;
+    align-items:center;
+    gap:4px;
+    font-weight:500;
+  }
+  .notif-time::before{
+    content:'';
+    width:5px;height:5px;border-radius:50%;
+    background:#22C55E;
+    animation:pulse-green 1.5s infinite;
+  }
+  .notif-close{
+    position:absolute;
+    top:6px;right:6px;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    color:#999;
+    font-size:18px;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background .2s;
+  }
+  .notif-close:hover{background:rgba(0,0,0,.05);color:#333}
+  
+  @keyframes pulse-green{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.5;transform:scale(1.3)}
+  }
+  
+  /* Mobile: menor e reposicionada pra não conflitar com WhatsApp */
+  @media(max-width:640px){
+    .notification{
+      max-width:280px;
+      padding:10px 14px;
+      padding-right:30px;
+      bottom:88px;
+      left:12px;
+    }
+    .notif-icon{width:36px;height:36px;font-size:18px}
+    .notif-title{font-size:12px}
+    .notif-text{font-size:11px}
+    .notif-time{font-size:9px}
+  }
+</style>
+
+<script>
+  // FAQ
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // TOGGLE DETALHES DOS CARDS DE DESTINO (só 1 aberto por vez)
+  function toggleDetails(btn){
+    const card = btn.closest('.dest-card-new');
+    if (!card) return;
+    const wasOpen = card.classList.contains('open');
+
+    // Fecha TODOS os cards (reset de classe e texto do botão)
+    document.querySelectorAll('.dest-card-new').forEach(c => {
+      c.classList.remove('open');
+      const span = c.querySelector('.dest-card-toggle span');
+      if (span) span.textContent = 'Detalhes';
+    });
+
+    // Se o clicado não estava aberto, abre só ele
+    if (!wasOpen){
+      card.classList.add('open');
+      const span = btn.querySelector('span');
+      if (span) span.textContent = 'Menos detalhes';
+    }
+  }
+
+  // CONTADOR ANIMADO DA SEÇÃO AUTHORITY (anima ao entrar na viewport)
+  (function(){
+    const counters = document.querySelectorAll('.auth-stat .count');
+    if (!counters.length) return;
+
+    // Respeita quem prefere menos movimento — mostra valor final direto
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced){
+      counters.forEach(c => c.textContent = c.getAttribute('data-target'));
+      return;
+    }
+
+    function animateCount(el){
+      const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+      const duration = 2800; // ms
+      const start = performance.now();
+      // Marca essa animação com um id único — se começar outra, a antiga para
+      const runId = (el._runId || 0) + 1;
+      el._runId = runId;
+      // ease-out cubic: rápido no começo, desacelera no final
+      const easeOut = t => 1 - Math.pow(1 - t, 3);
+
+      function tick(now){
+        if (el._runId !== runId) return; // foi cancelada
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOut(progress);
+        const current = Math.round(target * eased);
+        el.textContent = current;
+        if (progress < 1){
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = target; // garante valor exato no fim
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // IntersectionObserver: dispara toda vez que o bloco aparece na tela
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const el = entry.target;
+        if (entry.isIntersecting){
+          animateCount(el); // anima do zero toda vez que entra
+        } else {
+          el._runId = (el._runId || 0) + 1; // cancela animação em andamento
+          el.textContent = '0';
+        }
+      });
+    }, { threshold: 0.2 });
+
+    counters.forEach(c => observer.observe(c));
+  })();
+
+  // ANIMAÇÃO TYPING — título da seção ABOUT
+  (function(){
+    const title = document.querySelector('.about-title');
+    if (!title) return;
+    const typedEl = title.querySelector('.about-typed');
+    const cursor = title.querySelector('.about-cursor');
+    const prefix = title.dataset.prefix || '';
+    const suffix = title.dataset.suffix || '';
+    const fullText = prefix + suffix;
+    const prefixLen = prefix.length;
+
+    // Monta o HTML com o span azul só no suffix, baseado em quantos chars já digitou
+    function render(charsShown){
+      if (charsShown <= prefixLen){
+        typedEl.textContent = fullText.slice(0, charsShown);
+      } else {
+        const before = fullText.slice(0, prefixLen);
+        const blue = fullText.slice(prefixLen, charsShown);
+        typedEl.innerHTML = before + '<span class="blue">' + blue + '</span>';
+      }
+    }
+
+    // Respeita quem prefere menos movimento
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced){
+      render(fullText.length);
+      cursor.classList.add('is-hidden');
+      return;
+    }
+
+    function typeIn(el){
+      const speed = 55; // ms por caractere
+      const runId = (el._typeRunId || 0) + 1;
+      el._typeRunId = runId;
+      cursor.classList.remove('is-hidden');
+      let i = 0;
+      render(0);
+      function step(){
+        if (el._typeRunId !== runId) return;
+        i++;
+        render(i);
+        if (i < fullText.length){
+          setTimeout(step, speed);
+        }
+      }
+      setTimeout(step, 300); // pequeno delay antes de começar
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const el = entry.target;
+        if (entry.isIntersecting){
+          typeIn(el);
+        } else {
+          el._typeRunId = (el._typeRunId || 0) + 1; // cancela
+          render(0);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    io.observe(title);
+  })();
+
+  // REVEAL ON SCROLL — aplica animação de entrada nas seções e elementos
+  (function(){
+    // Aplica .reveal ou .reveal-stagger automaticamente em elementos-chave.
+    // (Fazendo via JS evita ter que marcar cada um no HTML.)
+    const selectors = {
+      // Blocos simples: fade + slide up
+      reveal: [
+        '.reality h2', '.reality-grid',
+        '.economy .eco-header', '.economy .eco-comparison', '.economy .eco-conclusion',
+        '.about .about-text', '.about .about-mosaic',
+        '.solution .sol-header',
+        '.destinations .dest-header',
+        '.compare h2', '.compare-grid',
+        '.offer .offer-header', '.discount-banner',
+        '.guarantee-card',
+        '.faq h2', '.faq-list',
+        '.final h2', '.final .hero-cta'
+      ],
+      // Grids que fazem cascata (filhos aparecem um após o outro)
+      stagger: [
+        '.dest-grid-new',
+        '.offer-grid',
+        '.solution .features',
+        '.reality-grid',
+        '.about-stats'
+      ]
+    };
+
+    // Evita aplicar em elementos inexistentes
+    selectors.reveal.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        if (!el.classList.contains('reveal-stagger')) el.classList.add('reveal');
+      });
+    });
+    selectors.stagger.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        el.classList.add('reveal-stagger', 'reveal');
+      });
+    });
+
+    const revealTargets = document.querySelectorAll('.reveal');
+    if (!revealTargets.length) return;
+
+    // Respeita prefers-reduced-motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced){
+      revealTargets.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target); // anima só 1 vez
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    revealTargets.forEach(el => io.observe(el));
+  })();
+
+  // SISTEMA DE NOTIFICAÇÕES DE PROVA SOCIAL
+  const notifications = [
+    // COMPRAS (60% das notificações)
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Mariana</strong> acabou de comprar o roteiro de <strong>Paris</strong>', time:'há 2 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Carlos</strong> garantiu o roteiro de <strong>Roma</strong>', time:'há 4 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Juliana</strong> comprou o <strong></strong>', time:'há 7 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Ricardo</strong> garantiu o roteiro de <strong>Milão</strong>', time:'há 9 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Beatriz</strong> comprou o roteiro de <strong>Veneza</strong>', time:'há 12 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Felipe</strong> levou o <strong></strong>', time:'há 15 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Amanda</strong> comprou o roteiro de <strong>Florença</strong>', time:'há 18 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Bruno</strong> garantiu o roteiro de <strong>Florença</strong>', time:'há 21 minutos'},
+    {emoji:'🎉', title:'Nova compra!', text:'<strong>Larissa</strong> comprou o <strong></strong>', time:'há 24 minutos'},
+    
+    // VISUALIZAÇÕES (30% - cria escassez)
+    {emoji:'👀', title:'Alta procura agora', text:'<strong>23 pessoas</strong> estão vendo esta oferta neste momento', time:'ao vivo', live:true},
+    {emoji:'👀', title:'Alta procura agora', text:'<strong>18 pessoas</strong> estão vendo o roteiro de Paris', time:'ao vivo', live:true},
+    {emoji:'🔥', title:'Oferta em alta', text:'<strong>12 compras</strong> nas últimas 2 horas', time:'ao vivo', live:true},
+    
+    // DEPOIMENTOS (10% - reforça qualidade)
+    {emoji:'⭐', title:'Avaliação 5 estrelas', text:'"Salvou minha viagem!" — <strong>Juliana</strong>, voltou de Roma', time:'há 1 hora'},
+    {emoji:'⭐', title:'Avaliação 5 estrelas', text:'"Não planejei nada, só segui. Perfeito." — <strong>Lucas</strong>', time:'há 3 horas'},
+  ];
+  
+  let notificationIndex = 0;
+  let notificationTimer;
+  
+  function showNotification(){
+    const n = notifications[notificationIndex];
+    document.getElementById('notif-emoji').textContent = n.emoji;
+    document.getElementById('notif-title').textContent = n.title;
+    document.getElementById('notif-text').innerHTML = n.text;
+    document.getElementById('notif-time').textContent = n.time;
+    
+    const notif = document.getElementById('social-notification');
+    notif.classList.add('show');
+    
+    // Esconde após 4 segundos
+    clearTimeout(notificationTimer);
+    notificationTimer = setTimeout(() => {
+      notif.classList.remove('show');
+    }, 4000);
+    
+    // Embaralha levemente a ordem pra não ficar sempre igual
+    notificationIndex = (notificationIndex + 1) % notifications.length;
+  }
+  
+  function hideNotification(){
+    document.getElementById('social-notification').classList.remove('show');
+    clearTimeout(notificationTimer);
+  }
+  
+  // Embaralha o array ao carregar pra cada visita ser diferente
+  notifications.sort(() => Math.random() - 0.5);
+  
+  // Primeira notificação após 3 segundos (pegada agressiva)
+  setTimeout(() => {
+    showNotification();
+    // Depois, a cada 8 segundos (5s mostrando + 3s oculta)
+    setInterval(showNotification, 8000);
+  }, 3000);
+</script>
 
 
 
+<script>
+/* Carrossel 3D Homi das Viagens */
+(function(){
+  const carousel = document.getElementById('hvCarousel');
+  if(!carousel) return;
+  const stage = carousel.querySelector('.hv-stage');
+  const slides = Array.from(stage.querySelectorAll('.hv-slide'));
+  const prevBtn = carousel.querySelector('.hv-prev');
+  const nextBtn = carousel.querySelector('.hv-next');
+  const dotsWrap = carousel.querySelector('.hv-dots');
+  let current = 0;
+  const total = slides.length;
+  const AUTOPLAY_MS = 3500;
+  let timer = null;
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'hv-dot' + (i === 0 ? ' is-active' : '');
+    b.setAttribute('aria-label', 'Ir para foto ' + (i+1));
+    b.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(b);
+  });
+  const dots = Array.from(dotsWrap.querySelectorAll('.hv-dot'));
+  function render(){
+    slides.forEach((slide, i) => {
+      slide.classList.remove('is-center','is-left','is-right','is-far-left','is-far-right');
+      const diff = (i - current + total) % total;
+      if(diff === 0) slide.classList.add('is-center');
+      else if(diff === 1) slide.classList.add('is-right');
+      else if(diff === total - 1) slide.classList.add('is-left');
+      else if(diff === 2) slide.classList.add('is-far-right');
+      else if(diff === total - 2) slide.classList.add('is-far-left');
+    });
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+  }
+  function goTo(i){ current = (i + total) % total; render(); restart(); }
+  function next(){ goTo(current + 1); }
+  function prev(){ goTo(current - 1); }
+  function start(){ if(total > 1) timer = setInterval(next, AUTOPLAY_MS); }
+  function stop(){ clearInterval(timer); }
+  function restart(){ stop(); start(); }
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  let startX = 0;
+  stage.addEventListener('touchstart', e => startX = e.touches[0].clientX, {passive:true});
+  stage.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 50) dx > 0 ? prev() : next();
+  });
+  slides.forEach((slide, i) => {
+    slide.addEventListener('click', () => {
+      if(!slide.classList.contains('is-center')) goTo(i);
+    });
+  });
+  render();
+  start();
+})();
+</script>
 
+<!-- TWEAKS: editar posição da logo e do botão -->
+<style>
+  #tweaks-panel{
+    position:fixed;bottom:20px;left:20px;z-index:9999;
+    background:#fff;border-radius:14px;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+    padding:18px;width:280px;font-family:system-ui,sans-serif;
+    display:none;
+  }
+  #tweaks-panel.is-open{display:block}
+  #tweaks-panel h4{font-size:14px;font-weight:700;margin:0 0 14px;color:#0A1F3D}
+  #tweaks-panel label{display:block;font-size:12px;color:#5C6F8A;margin:10px 0 4px;font-weight:600}
+  #tweaks-panel input[type=range]{width:100%}
+  #tweaks-panel .val{float:right;color:#1E88E5;font-weight:700}
+  #tweaks-panel .row-btn{display:flex;gap:8px;margin-top:14px}
+  #tweaks-panel button{
+    flex:1;background:#F5F8FC;border:1px solid #e0e7ef;color:#0A1F3D;
+    padding:8px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;
+  }
+  #tweaks-panel button:hover{background:#E3F2FD}
 
+  /* PULSE do botão do hero */
+  .hero-cta.pulse{
+    animation: heroCtaPulse var(--pulse-dur, 1.6s) cubic-bezier(.4,0,.6,1) infinite;
+    will-change: transform, box-shadow;
+  }
+  @keyframes heroCtaPulse{
+    0%, 100%{
+      transform: scale(1);
+      box-shadow: 0 8px 24px rgba(38,132,255,.35), 0 0 0 0 rgba(38,132,255, var(--pulse-alpha, .55));
+    }
+    50%{
+      transform: scale(var(--pulse-scale, 1.04));
+      box-shadow: 0 12px 32px rgba(38,132,255,.45), 0 0 0 var(--pulse-ring, 14px) rgba(38,132,255, 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero-cta.pulse{animation:none}
+  }
 
+  /* Pulse do badge "OFERTA EXTRA" e dos CTAs da seção de ofertas */
+  .offer-badge, #oferta .offer-cta{
+    animation: offerPulse 1.8s cubic-bezier(.4,0,.6,1) infinite;
+    will-change: transform, box-shadow;
+  }
+  @keyframes offerPulse{
+    0%, 100%{
+      transform: scale(1);
+      box-shadow: 0 6px 18px rgba(159,239,114,.25), 0 0 0 0 rgba(159,239,114,.55);
+    }
+    50%{
+      transform: scale(1.04);
+      box-shadow: 0 12px 32px rgba(159,239,114,.4), 0 0 0 14px rgba(159,239,114,0);
+    }
+  }
+  /* Tilted badge mantém rotação base; só pulsa a escala/shadow */
+  .offer-badge{
+    transform-origin: center;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .offer-badge, #oferta .offer-cta{animation:none}
+  }
+</style>
+<div id="tweaks-panel">
+  <h4>Ajustar nav (logo + botão)</h4>
+  <label>Logo: deslocar horizontal <span class="val" id="lx-val">479</span>px</label>
+  <input type="range" id="logo-x" min="-200" max="1200" value="0" step="1">
+  <label>Logo: deslocar vertical <span class="val" id="ly-val">49</span>px</label>
+  <input type="range" id="logo-y" min="-300" max="300" value="0" step="1">
+  <label>📱 Logo tamanho (mobile) <span class="val" id="lsz-val">46</span>px</label>
+  <input type="range" id="logo-sz" min="32" max="120" value="46" step="1">
+  <label style="display:flex;align-items:center;gap:8px;margin-top:4px">
+    <input type="checkbox" id="logo-center" style="width:auto;margin:0">
+    📱 Centralizar logo (mobile)
+  </label>
+  <label>Botão: deslocar horizontal <span class="val" id="bx-val">324</span>px</label>
+  <input type="range" id="btn-x" min="-1200" max="400" value="0" step="1">
+  <label>Botão: deslocar vertical <span class="val" id="by-val">60</span>px</label>
+  <input type="range" id="btn-y" min="-300" max="300" value="0" step="1">
+  <h4 style="margin-top:18px;padding-top:14px;border-top:1px solid #e0e7ef">Tamanho texto hero (mobile)</h4>
+  <label>Título <span class="val" id="hts-val">36</span>px</label>
+  <input type="range" id="hero-title-size" min="18" max="60" value="36" step="1">
+  <label>Subtítulo <span class="val" id="hss-val">16</span>px</label>
+  <input type="range" id="hero-sub-size" min="10" max="24" value="16" step="1">
+  <label>Cards flutuantes <span class="val" id="fcs-val">100</span>%</label>
+  <input type="range" id="float-card-scale" min="40" max="120" value="100" step="1">
+  <h4 style="margin-top:18px;padding-top:14px;border-top:1px solid #e0e7ef">Badge "★ DIFERENCIAL"</h4>
+  <label>Horizontal (right) <span class="val" id="dx-val">20</span>px</label>
+  <input type="range" id="d-x" min="-50" max="300" value="20" step="1">
+  <label>Vertical (top) <span class="val" id="dy-val">-10</span>px</label>
+  <input type="range" id="d-y" min="-60" max="80" value="-10" step="1">
+  <label>Tamanho <span class="val" id="dsz-val">10</span>px</label>
+  <input type="range" id="d-sz" min="8" max="28" value="10" step="1">
+  <label>Padding horizontal <span class="val" id="dph-val">10</span>px</label>
+  <input type="range" id="d-ph" min="4" max="40" value="10" step="1">
+  <label>Cor fundo <input type="color" id="d-bg" value="#F4B942" style="width:46px;height:28px;padding:0;border-radius:6px"></label>
+  <label>Cor texto <input type="color" id="d-fg" value="#0A1F3D" style="width:46px;height:28px;padding:0;border-radius:6px"></label>
+  <h4 style="margin-top:18px;padding-top:14px;border-top:1px solid #e0e7ef">Card "Dia a dia" (mobile)</h4>
+  <label>Horizontal <span class="val" id="f1x-val">0</span>px</label>
+  <input type="range" id="f1-x" min="-300" max="300" value="0" step="1">
+  <label>Vertical <span class="val" id="f1y-val">0</span>px</label>
+  <input type="range" id="f1-y" min="-300" max="300" value="0" step="1">
+  <h4 style="margin-top:18px;padding-top:14px;border-top:1px solid #e0e7ef">Card "Links de compra" (mobile)</h4>
+  <label>Horizontal <span class="val" id="f2x-val">0</span>px</label>
+  <input type="range" id="f2-x" min="-300" max="300" value="0" step="1">
+  <label>Vertical <span class="val" id="f2y-val">0</span>px</label>
+  <input type="range" id="f2-y" min="-300" max="300" value="0" step="1">
+  <h4 style="margin-top:18px;padding-top:14px;border-top:1px solid #e0e7ef">Card "Restaurantes" (mobile)</h4>
+  <label>Horizontal <span class="val" id="f3x-val">0</span>px</label>
+  <input type="range" id="f3-x" min="-300" max="300" value="0" step="1">
+  <label>Vertical <span class="val" id="f3y-val">0</span>px</label>
+  <input type="range" id="f3-y" min="-300" max="300" value="0" step="1">
+  <h4 style="margin-top:18px;padding-top:14px;border-top:1px solid #e0e7ef">Botão hero — Pulsação</h4>
+  <label style="display:flex;align-items:center;gap:8px;margin-top:4px">
+    <input type="checkbox" id="pulse-on" style="width:auto;margin:0">
+    Ativar pulsação
+  </label>
+  <label>Velocidade <span class="val" id="pspd-val">1.6</span>s</label>
+  <input type="range" id="pulse-speed" min="6" max="40" value="16" step="1">
+  <label>Intensidade (escala) <span class="val" id="pscl-val">4</span>%</label>
+  <input type="range" id="pulse-scale" min="0" max="15" value="4" step="1">
+  <label>Anel (raio) <span class="val" id="prng-val">14</span>px</label>
+  <input type="range" id="pulse-ring" min="0" max="40" value="14" step="1">
+  <div class="row-btn">
+    <button id="tweaks-reset">Resetar</button>
+    <button id="tweaks-close">Fechar</button>
+  </div>
+</div>
+<script>
+(function(){
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "logoX": 514,
+    "logoY": 61,
+    "logoSz": 70,
+    "logoCenter": true,
+    "btnX": -1061,
+    "btnY": 60,
+    "heroTitleSize": 33,
+    "heroSubSize": 16,
+    "floatCardScale": 75,
+    "f1x": 5,
+    "f1y": 0,
+    "f2x": 12,
+    "f2y": -119,
+    "f3x": -31,
+    "f3y": -7,
+    "dx": 20,
+    "dy": 39,
+    "dSz": 10,
+    "dPh": 29,
+    "dBg": "#F4B942",
+    "dFg": "#0A1F3D",
+    "pulseOn": true,
+    "pulseSpeed": 28,
+    "pulseScale": 8,
+    "pulseRing": 14
+  }/*EDITMODE-END*/;
 
+  const panel = document.getElementById('tweaks-panel');
+  const logo = document.querySelector('nav .logo');
+  const btn = document.querySelector('nav .nav-cta');
+  const heroTitle = document.querySelector('.hero-title');
+  const heroSub = document.querySelector('.hero-sub');
+  const heroCta = document.querySelector('.hero .hero-cta');
+  const state = Object.assign({}, TWEAK_DEFAULTS);
 
-★★★★★
-+500 viajantes já usaram
+  // Style tag dinâmica pra aplicar só no mobile
+  const dynStyle = document.createElement('style');
+  dynStyle.id = 'tweaks-dyn-style';
+  document.head.appendChild(dynStyle);
 
-📅
-Dia a dia
-já montado
-🎫
-Links de compra
-dentro do PDF
-✓
-Restaurantes
-testados
-+11
-Anos de experiência em turismo
-+38
-Países conhecidos
-32
-Deles só na Europa
-+500
-Viajantes atendidos
-O QUE TEM DENTRO DO EBOOK
-Seu roteiro, pronto e completo
-Cada eBook é um PDF organizado, prático e sem enrolação. Você abre no celular ou imprime — e segue.
-📅
-Dia a dia detalhado
-4 dias completos por cidade, divididos em manhã, tarde e noite.
-🎫
-Links de compra dentro do PDF
-Entrada de museu, tour, transporte — tudo com link direto pra comprar sem ficar procurando.
-⏰
-Melhor horário pra cada atração
-Pra você evitar fila, multidão e aproveitar ao máximo.
-🍽️
-Restaurantes testados
-Lugares aprovados na prática, longe de furada de turista.
-🚇
-Como chegar em cada lugar
-Rota explicada: metrô, a pé ou táxi — do jeito mais rápido.
-⚠️
-Dicas que evitam erros
-Avisos práticos pra você não cair nas mesmas ciladas que todo mundo.
-EBOOKS DISPONÍVEIS
-Escolha seu destino
-Cada eBook é um roteiro completo de 4 dias, com tudo pra você só abrir e seguir.
-🇫🇷
-Roteiro Paris + Bônus
-R$ 107
-⏱ 4 dias
-Detalhes
+  function apply(){
+    const isMobile = window.matchMedia('(max-width:900px)').matches || document.body.classList.contains('preview-mobile');
+    if(logo){
+      if(isMobile && state.logoCenter){
+        logo.style.transform = ''; // centralização cuida via CSS
+      } else {
+        logo.style.transform = `translate(${state.logoX}px, ${state.logoY}px)`;
+      }
+    }
+    if(btn) btn.style.transform = `translate(${state.btnX}px, ${state.btnY}px)`;
+    // aplica fonte da hero no mobile (<=900px) e no preview-mobile
+    const s = state.floatCardScale/100;
+    const f1 = `translate(${state.f1x}px, ${state.f1y}px) scale(${s})`;
+    const f2 = `translate(${state.f2x}px, ${state.f2y}px) scale(${s})`;
+    const f3 = `translate(${state.f3x}px, ${state.f3y}px) scale(${s})`;
+    dynStyle.textContent = `
+      .feature.highlight::before{
+        top:${state.dy}px !important;
+        right:${state.dx}px !important;
+        font-size:${state.dSz}px !important;
+        padding:4px ${state.dPh}px !important;
+        background:${state.dBg} !important;
+        color:${state.dFg} !important;
+      }
+      @media(max-width:900px){
+        .hero-title{font-size:${state.heroTitleSize}px !important;line-height:1.1 !important}
+        .hero-sub{font-size:${state.heroSubSize}px !important}
+        .float-card.float-1{transform:${f1} !important;transform-origin:center !important}
+        .float-card.float-2{transform:${f2} !important;transform-origin:center !important}
+        .float-card.float-3{transform:${f3} !important;transform-origin:center !important}
+        nav .logo-img{height:${state.logoSz}px !important}
+        ${state.logoCenter ? `
+          nav .nav-inner{position:relative}
+          nav .logo{
+            position:absolute !important;
+            left:50% !important;
+            top:50% !important;
+            transform:translate(-50%, -50%) !important;
+          }
+          nav .menu{display:none !important}
+        ` : ''}
+      }
+      body.preview-mobile nav .logo-img{height:${state.logoSz}px !important}
+      ${state.logoCenter ? `
+        body.preview-mobile nav .nav-inner{position:relative}
+        body.preview-mobile nav .logo{
+          position:absolute !important;
+          left:50% !important;
+          top:50% !important;
+          transform:translate(-50%, -50%) !important;
+        }
+        body.preview-mobile nav .menu{display:none !important}
+      ` : ''}
+      body.preview-mobile .hero-title{font-size:${state.heroTitleSize}px !important;line-height:1.1 !important}
+      body.preview-mobile .hero-sub{font-size:${state.heroSubSize}px !important}
+      body.preview-mobile .float-card.float-1{transform:${f1} !important;transform-origin:center !important}
+      body.preview-mobile .float-card.float-2{transform:${f2} !important;transform-origin:center !important}
+      body.preview-mobile .float-card.float-3{transform:${f3} !important;transform-origin:center !important}
+    `;
+    document.getElementById('lx-val').textContent = state.logoX;
+    document.getElementById('ly-val').textContent = state.logoY;
+    document.getElementById('lsz-val').textContent = state.logoSz;
+    document.getElementById('bx-val').textContent = state.btnX;
+    document.getElementById('by-val').textContent = state.btnY;
+    document.getElementById('hts-val').textContent = state.heroTitleSize;
+    document.getElementById('hss-val').textContent = state.heroSubSize;
+    document.getElementById('fcs-val').textContent = state.floatCardScale;
+    document.getElementById('f1x-val').textContent = state.f1x;
+    document.getElementById('f1y-val').textContent = state.f1y;
+    document.getElementById('f2x-val').textContent = state.f2x;
+    document.getElementById('f2y-val').textContent = state.f2y;
+    document.getElementById('f3x-val').textContent = state.f3x;
+    document.getElementById('f3y-val').textContent = state.f3y;
+    document.getElementById('dx-val').textContent = state.dx;
+    document.getElementById('dy-val').textContent = state.dy;
+    document.getElementById('dsz-val').textContent = state.dSz;
+    document.getElementById('dph-val').textContent = state.dPh;
+    document.getElementById('logo-x').value = state.logoX;
+    document.getElementById('logo-y').value = state.logoY;
+    document.getElementById('logo-sz').value = state.logoSz;
+    document.getElementById('logo-center').checked = !!state.logoCenter;
+    document.getElementById('btn-x').value = state.btnX;
+    document.getElementById('btn-y').value = state.btnY;
+    document.getElementById('hero-title-size').value = state.heroTitleSize;
+    document.getElementById('hero-sub-size').value = state.heroSubSize;
+    document.getElementById('float-card-scale').value = state.floatCardScale;
+    document.getElementById('f1-x').value = state.f1x;
+    document.getElementById('f1-y').value = state.f1y;
+    document.getElementById('f2-x').value = state.f2x;
+    document.getElementById('f2-y').value = state.f2y;
+    document.getElementById('f3-x').value = state.f3x;
+    document.getElementById('f3-y').value = state.f3y;
+    document.getElementById('d-x').value = state.dx;
+    document.getElementById('d-y').value = state.dy;
+    document.getElementById('d-sz').value = state.dSz;
+    document.getElementById('d-ph').value = state.dPh;
+    document.getElementById('d-bg').value = state.dBg;
+    document.getElementById('d-fg').value = state.dFg;
 
-Roteiro completo para uma viagem de 4 dias em Paris.
-O que você vai encontrar:
-	•	Roteiro dia a dia (manhã, tarde, noite)
-	•	Links diretos pra comprar ingressos
-	•	Melhores horários de cada atração
-	•	Como chegar (metrô, transporte)
-	•	Sugestões de restaurantes
-Bônus inclusos:
-	•	Como ir do aeroporto ao hotel
-	•	Melhores hotéis e bairros
-	•	5 cidades bate e volta
-	•	Cafés e restaurantes imperdíveis
-	•	Guia de eSIM + cartão Wise
-Comprar agora
-🇮🇹
-Roteiro Roma + Bônus
-R$ 107
-⏱ 4 dias
-Detalhes
+    // Pulsação do botão hero
+    if(heroCta){
+      heroCta.classList.toggle('pulse', !!state.pulseOn);
+      heroCta.style.setProperty('--pulse-dur', (state.pulseSpeed/10).toFixed(1) + 's');
+      heroCta.style.setProperty('--pulse-scale', (1 + state.pulseScale/100).toFixed(3));
+      heroCta.style.setProperty('--pulse-ring', state.pulseRing + 'px');
+    }
+    document.getElementById('pulse-on').checked = !!state.pulseOn;
+    document.getElementById('pulse-speed').value = state.pulseSpeed;
+    document.getElementById('pulse-scale').value = state.pulseScale;
+    document.getElementById('pulse-ring').value = state.pulseRing;
+    document.getElementById('pspd-val').textContent = (state.pulseSpeed/10).toFixed(1);
+    document.getElementById('pscl-val').textContent = state.pulseScale;
+    document.getElementById('prng-val').textContent = state.pulseRing;
+  }
+  apply();
 
-Roteiro completo para uma viagem de 4 dias em Roma.
-O que você vai encontrar:
-	•	Roteiro dia a dia (manhã, tarde, noite)
-	•	Links diretos pra comprar ingressos
-	•	Melhores horários de cada atração
-	•	Como chegar (metrô, transporte)
-	•	Sugestões de restaurantes
-Bônus inclusos:
-	•	Como ir do aeroporto ao hotel
-	•	Melhores hotéis e bairros
-	•	5 cidades bate e volta
-	•	Cafés e restaurantes imperdíveis
-	•	Guia de eSIM + cartão Wise
-Comprar agora
-🇮🇹
-Roteiro Veneza + Bônus
-R$ 107
-⏱ 4 dias
-Detalhes
+  function persist(){
+    try{
+      window.parent.postMessage({type:'__edit_mode_set_keys', edits: {
+        logoX: state.logoX, logoY: state.logoY,
+        logoSz: state.logoSz, logoCenter: state.logoCenter,
+        btnX: state.btnX, btnY: state.btnY,
+        heroTitleSize: state.heroTitleSize, heroSubSize: state.heroSubSize,
+        floatCardScale: state.floatCardScale,
+        f1x: state.f1x, f1y: state.f1y,
+        f2x: state.f2x, f2y: state.f2y,
+        f3x: state.f3x, f3y: state.f3y,
+        dx: state.dx, dy: state.dy,
+        dSz: state.dSz, dPh: state.dPh,
+        dBg: state.dBg, dFg: state.dFg,
+        pulseOn: state.pulseOn,
+        pulseSpeed: state.pulseSpeed,
+        pulseScale: state.pulseScale,
+        pulseRing: state.pulseRing
+      }}, '*');
+    }catch(e){}
+  }
 
-Roteiro completo para uma viagem de 4 dias em Veneza.
-O que você vai encontrar:
-	•	Roteiro dia a dia (manhã, tarde, noite)
-	•	Links diretos pra comprar ingressos
-	•	Melhores horários de cada atração
-	•	Como chegar (metrô, transporte)
-	•	Sugestões de restaurantes
-Bônus inclusos:
-	•	Como ir do aeroporto ao hotel
-	•	Melhores hotéis e bairros
-	•	5 cidades bate e volta
-	•	Cafés e restaurantes imperdíveis
-	•	Guia de eSIM + cartão Wise
-Comprar agora
-🇮🇹
-Roteiro Florença + Bônus
-R$ 107
-⏱ 4 dias
-Detalhes
+  function bind(id, key){
+    document.getElementById(id).addEventListener('input', e => {
+      state[key] = parseInt(e.target.value, 10);
+      apply();
+      persist();
+    });
+  }
+  function bindColor(id, key){
+    document.getElementById(id).addEventListener('input', e => {
+      state[key] = e.target.value;
+      apply();
+      persist();
+    });
+  }
+  bind('logo-x','logoX'); bind('logo-y','logoY');
+  bind('logo-sz','logoSz');
+  document.getElementById('logo-center').addEventListener('change', e => {
+    state.logoCenter = e.target.checked;
+    apply();
+    persist();
+  });
+  bind('btn-x','btnX'); bind('btn-y','btnY');
+  bind('hero-title-size','heroTitleSize');
+  bind('hero-sub-size','heroSubSize');
+  bind('float-card-scale','floatCardScale');
+  bind('f1-x','f1x'); bind('f1-y','f1y');
+  bind('f2-x','f2x'); bind('f2-y','f2y');
+  bind('f3-x','f3x'); bind('f3-y','f3y');
+  bind('d-x','dx'); bind('d-y','dy');
+  bind('d-sz','dSz'); bind('d-ph','dPh');
+  bindColor('d-bg','dBg'); bindColor('d-fg','dFg');
 
-Roteiro completo para uma viagem de 4 dias em Florença.
-O que você vai encontrar:
-	•	Roteiro dia a dia (manhã, tarde, noite)
-	•	Links diretos pra comprar ingressos
-	•	Melhores horários de cada atração
-	•	Como chegar (metrô, transporte)
-	•	Sugestões de restaurantes
-Bônus inclusos:
-	•	Como ir do aeroporto ao hotel
-	•	Melhores hotéis e bairros
-	•	5 cidades bate e volta
-	•	Cafés e restaurantes imperdíveis
-	•	Guia de eSIM + cartão Wise
-Comprar agora
-🇮🇹
-Roteiro Milão + Bônus
-R$ 107
-⏱ 4 dias
-Detalhes
+  document.getElementById('pulse-on').addEventListener('change', e => {
+    state.pulseOn = e.target.checked;
+    apply(); persist();
+  });
+  bind('pulse-speed','pulseSpeed');
+  bind('pulse-scale','pulseScale');
+  bind('pulse-ring','pulseRing');
 
-Roteiro completo para uma viagem de 4 dias em Milão.
-O que você vai encontrar:
-	•	Roteiro dia a dia (manhã, tarde, noite)
-	•	Links diretos pra comprar ingressos
-	•	Melhores horários de cada atração
-	•	Como chegar (metrô, transporte)
-	•	Sugestões de restaurantes
-Bônus inclusos:
-	•	Como ir do aeroporto ao hotel
-	•	Melhores hotéis e bairros
-	•	5 cidades bate e volta
-	•	Cafés e restaurantes imperdíveis
-	•	Guia de eSIM + cartão Wise
-Comprar agora
-A CONTA QUE VOCÊ NÃO FEZ
-Quanto você vai economizar de verdade
-A maioria das pessoas paga caro pra planejar viagem — em consultoria, em tempo, ou em erros na hora. Olha a comparação:
-SEM O ROTEIRO
-O que uma viagem mal planejada te custa
-Consultoria com agência
-Pra te montar um roteiro
-250€
-Tempo seu pesquisando
-40h planejando em vez de curtir
-300€
-Armadilhas de turista
-Restaurantes ruins, filas, Uber caro
-250€
-Atrações que deixou de ver
-Voltar pra revisitar custa fortuna
-200€
-TOTAL PERDIDO
-1.000€
-VS
-COM O ROTEIRO
-O que você investe e já resolve tudo
-Roteiro completo em PDF
-Dia a dia com manhã, tarde e noite
-R$ 107
-Tempo pesquisando
-Zero. Você só abre e segue
-R$ 0
-Links de compra no PDF
-Compra entrada e tour sem procurar
-Incluso
-Restaurantes e dicas testadas
-Nada de cair em furada
-Incluso
-INVESTIMENTO TOTAL
-R$ 107
-Você economiza até 1.000€ na prática
-E ainda aproveita 100% da viagem. O roteiro custa menos do que um almoço em Paris e pode salvar a viagem inteira.
-ESCOLHA SEU PLANO
-Comece sua viagem do jeito certo
-Roteiro Individual
-Pra quem vai pra um destino só
-R$
-107
-à vista
-	•	1 destino completo (4 dias) Manhã, tarde e noite organizados Links de compra no PDF Restaurantes e atrações testados Acesso vitalício + atualizações
-Comprar agora
-OFERTA EXTRA
-Leve 2 ou mais e economize
-10% OFF automático a partir do 2º roteiro
-10%
-OFF
-a partir do 2º roteiro
-	•	Desconto aplicado automático no checkout Vale pra qualquer combinação de destinos Sem cupom, sem código Cada roteiro chega separado no e-mail Acesso vitalício + atualizações
-Ver todos os destinos
-Comprou 2 ou mais? 20% OFF aplicado automaticamente no checkout
+  document.getElementById('tweaks-reset').addEventListener('click', () => {
+    state.logoX = 0; state.logoY = 0; state.btnX = 0; state.btnY = 0;
+    state.logoSz = 46; state.logoCenter = false;
+    state.heroTitleSize = 36; state.heroSubSize = 16;
+    state.floatCardScale = 100;
+    state.f1x = 0; state.f1y = 0;
+    state.f2x = 0; state.f2y = 0;
+    state.f3x = 0; state.f3y = 0;
+    state.dx = 20; state.dy = -10;
+    state.dSz = 10; state.dPh = 10;
+    state.dBg = '#F4B942'; state.dFg = '#0A1F3D';
+    // reset color inputs too
+    document.getElementById('d-bg').value = state.dBg;
+    document.getElementById('d-fg').value = state.dFg;
+    document.getElementById('logo-center').checked = false;
+    apply(); persist();
+  });
+  document.getElementById('tweaks-close').addEventListener('click', () => {
+    panel.classList.remove('is-open');
+    try{ window.parent.postMessage({type:'__edit_mode_deactivated_by_page'}, '*'); }catch(e){}
+  });
 
-7
-DIAS
-Garantia incondicional de 7 dias
-Comprou, abriu e não curtiu? Manda um e-mail e devolvo 100% do seu dinheiro. Sem perguntas, sem burocracia. O risco é todo meu.
-PERGUNTAS FREQUENTES
-Ainda com dúvida?
-Como recebo o roteiro depois da compra?
-Logo após o pagamento ser aprovado, você recebe o link de acesso por e-mail e WhatsApp. O PDF fica disponível pra download imediato.
-Os links de compra das atrações estão onde?
-Dentro do próprio PDF. Cada atração tem o link direto pra você comprar ingresso, tour ou passe sem precisar ficar procurando em site nenhum.
-Funciona pra quem nunca viajou pra Europa?
-Sim, foi feito exatamente pra isso. O roteiro é tão detalhado que você não precisa entender nada de planejamento — é só abrir e seguir.
-Posso usar no celular?
-Pode. O PDF é otimizado pra leitura no celular, com links clicáveis pra Google Maps e tudo que você precisar acessar na hora.
-Os preços e horários estão atualizados?
-Sim. E se algo mudar, você recebe a atualização gratuitamente — acesso vitalício significa que está sempre na versão mais nova.
-E se eu não gostar?
-Você tem 7 dias pra pedir reembolso 100%. Sem pergunta, sem burocracia. Risco zero.
-￼
-Política de Privacidade
-Termos de Uso
-Contato
-© 2026 Roteiro das Viagens · Todos os direitos reservados
+  window.addEventListener('message', e => {
+    const d = e.data || {};
+    if(d.type === '__activate_edit_mode') panel.classList.add('is-open');
+    if(d.type === '__deactivate_edit_mode') panel.classList.remove('is-open');
+  });
+  try{ window.parent.postMessage({type:'__edit_mode_available'}, '*'); }catch(e){}
+})();
+</script>
 
-🎉
-Nova compra!
-Carlos garantiu o roteiro de Roma
-há 4 minutos
-×
-R$ 97
-R$ 107/roteiro
-Comprar agora 📱
-R$ 97
-R$ 107/roteiro
-Comprar agora
+<!-- MOBILE PREVIEW TOGGLE -->
+<style>
+  #mobile-toggle{
+    position:fixed;top:20px;right:20px;z-index:10000;
+    background:#1E88E5;color:#fff;border:none;
+    width:56px;height:56px;border-radius:50%;
+    box-shadow:0 10px 30px rgba(30,136,229,.4);
+    cursor:pointer;font-size:22px;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .2s, background .2s;
+  }
+  #mobile-toggle:hover{transform:scale(1.08)}
+  #mobile-toggle.is-mobile{background:#0A1F3D}
 
+  body.preview-mobile{
+    background:#111 !important;
+    overflow-x:hidden;
+  }
+  body.preview-mobile > *:not(#mobile-toggle):not(#tweaks-panel){
+    max-width:390px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    box-shadow:0 0 0 8px #000, 0 20px 60px rgba(0,0,0,.6);
+    border-radius:32px;
+    overflow:hidden;
+  }
+  /* força qualquer .container dentro a respeitar o frame de 390 */
+  body.preview-mobile .container{
+    max-width:100% !important;
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+  /* grids => 1 coluna */
+  body.preview-mobile .features,
+  body.preview-mobile .hero-grid,
+  body.preview-mobile .about-grid,
+  body.preview-mobile .eco-comparison,
+  body.preview-mobile .about-stats{display:none !important}
+  body.preview-mobile .about-mosaic{
+    grid-template-columns:1fr !important;
+    gap:16px !important;
+  }
+  body.preview-mobile .eco-vs{margin:0 auto}
+  body.preview-mobile .nav-links{display:none !important}
+  body.preview-mobile .hero{padding:40px 0 60px !important}
+  body.preview-mobile .hero-title{font-size:36px !important;line-height:1.1 !important}
+  body.preview-mobile .section-title{font-size:28px !important;line-height:1.15 !important}
+  body.preview-mobile .feature{padding:28px 22px !important;min-height:auto !important}
+  body.preview-mobile .about-mosaic{height:auto !important}
+  body.preview-mobile .eco-total-price{font-size:26px !important}
+  /* preview-mobile: força ordem da hero igual ao mobile real */
+  body.preview-mobile .hero-grid{display:flex !important;flex-direction:column !important;align-items:center !important;text-align:center !important;gap:24px !important}
+  body.preview-mobile .hero-text{display:contents !important}
+  body.preview-mobile .hero-visual{order:2 !important;max-width:340px !important;margin:0 auto !important}
+  body.preview-mobile .hero-tag{display:none !important}
+  body.preview-mobile .hero-title{order:1 !important;font-size:34px !important;line-height:1.1 !important;margin-bottom:8px !important}
+  body.preview-mobile .hero-sub{order:3 !important;font-size:16px !important;margin-bottom:16px !important}
+  body.preview-mobile .hero-cta{order:4 !important;width:100% !important;justify-content:center !important}
+  body.preview-mobile .hero-trust{order:5 !important;margin-top:8px !important;justify-content:center !important}
+  /* fix animação que fica presa em opacity:0 */
+  body.preview-mobile .hero-title,
+  body.preview-mobile .hero-sub,
+  body.preview-mobile .hero-cta,
+  body.preview-mobile .hero-trust,
+  body.preview-mobile .hero-visual,
+  body.preview-mobile .hero-tag{animation-fill-mode:forwards !important;animation-duration:.1s !important;opacity:1 !important}
+  body.preview-mobile .auth-grid{grid-template-columns:repeat(2,1fr) !important;gap:16px !important}
+  body.preview-mobile .auth-stat{border:none !important;padding:10px !important}
+  body.preview-mobile .auth-stat .num{font-size:36px !important}
+  body.preview-mobile .auth-stat .lbl{font-size:12px !important}
+</style>
+
+<!-- STICKY CTA MOBILE -->
+<style>
+  #sticky-cta{
+    position:fixed;bottom:-100px;left:0;right:0;z-index:998;
+    background:#fff;
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    box-shadow:0 -10px 30px rgba(0,0,0,.15);
+    display:flex;align-items:center;gap:12px;
+    transition:bottom .35s cubic-bezier(.2,.8,.2,1);
+    border-top:1px solid #e8eef5;
+  }
+  #sticky-cta.is-visible{bottom:0}
+  #sticky-cta .price-mini{
+    flex:0 0 auto;line-height:1.1;
+  }
+  #sticky-cta .price-mini .was{
+    font-size:11px;color:#94a3b8;text-decoration:line-through;
+  }
+  #sticky-cta .price-mini .now{
+    font-family:'Sora',sans-serif;font-weight:800;
+    font-size:20px;color:#0A1F3D;
+  }
+  #sticky-cta .price-mini .now small{font-size:11px;color:#64748b;font-weight:500}
+  #sticky-cta .cta-btn{
+    flex:1;
+    background:linear-gradient(135deg,#1E88E5 0%,#1976D2 100%);
+    color:#fff;font-family:'Sora',sans-serif;font-weight:700;
+    padding:14px;border-radius:12px;text-align:center;
+    font-size:14px;text-decoration:none;
+    box-shadow:0 8px 20px rgba(30,136,229,.35);
+    letter-spacing:.02em;
+    display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+  #sticky-cta .cta-btn::after{content:'→';font-size:18px;line-height:1}
+  /* ajuste do whatsapp float pra não sobrepor */
+  body.sticky-visible .wa-float{bottom:96px !important}
+
+  /* só aparece em mobile ou no preview-mobile */
+  @media(min-width:901px){
+    body:not(.preview-mobile) #sticky-cta{display:none !important}
+  }
+</style>
+<div id="sticky-cta" class="is-visible">
+  <div class="price-mini">
+    <div class="was">R$ 97</div>
+    <div class="now">R$ 107<small>/roteiro</small></div>
+  </div>
+  <a href="#oferta" class="cta-btn">Comprar agora</a>
+</div>
+<script>
+(function(){
+  const bar = document.getElementById('sticky-cta');
+  if(!bar) return;
+
+  const authStrip   = document.querySelector('.auth-strip');
+  const destinations= document.querySelector('.destinations');
+  const about       = document.querySelector('#sobre, .about');
+
+  let ticking = false;
+  function check(){
+    const y = window.scrollY + 100;
+    const topOf    = el => el ? (el.getBoundingClientRect().top    + window.scrollY) : Infinity;
+    const bottomOf = el => el ? (el.getBoundingClientRect().bottom + window.scrollY) : Infinity;
+
+    const aAuth  = topOf(authStrip);
+    const dTop   = topOf(destinations);
+    const aAbout = topOf(about);
+
+    // Visible: (auth-strip → antes de .destinations) OR (a partir de .about até o fim)
+    const phase1 = y >= aAuth && y < dTop;
+    const phase2 = y >= aAbout;
+    const show = phase1 || phase2;
+
+    bar.classList.toggle('is-visible', show);
+    document.body.classList.toggle('sticky-visible', show);
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if(!ticking){ requestAnimationFrame(check); ticking = true; }
+  }, {passive:true});
+  window.addEventListener('resize', check, {passive:true});
+  check();
+})();
+</script>
+
+<!-- MEDIA QUERIES REAIS PARA MOBILE -->
+<style>
+  @media (max-width: 900px){
+    .container{padding-left:20px !important;padding-right:20px !important}
+    .nav-links{display:none !important}
+    .nav-inner{padding:0 16px !important;justify-content:center !important;position:relative !important}
+    .logo-img{height:70px !important}
+    nav .logo{transform:none !important}
+    nav .menu, nav .nav-cta, nav .nav-links{display:none !important}
+
+    /* grids => 1 coluna */
+    .features,
+    .hero-grid,
+    .about-grid,
+    .eco-comparison,
+    .about-mosaic{
+      grid-template-columns:1fr !important;
+      gap:20px !important;
+    }
+    .about-stats{display:none !important}
+
+    /* hero */
+    .hero{padding:50px 0 70px !important}
+    .hero-title{font-size:38px !important;line-height:1.1 !important}
+    .hero p, .hero-sub{font-size:16px !important}
+
+    /* section titles */
+    .section-title{font-size:30px !important;line-height:1.15 !important}
+    .eco-header, .sol-header{margin-bottom:40px !important}
+
+    /* economy */
+    .eco-vs{margin:0 auto;width:52px;height:52px;font-size:18px}
+    .eco-card{padding:24px !important}
+    .eco-total-price{font-size:26px !important}
+    .eco-conclusion{padding:24px !important;margin-top:30px !important}
+    .eco-conclusion h4{font-size:20px !important}
+
+    /* solution / features */
+    .solution{padding:70px 0 !important}
+    .feature{padding:28px 22px !important;min-height:auto !important}
+    .feature h3{font-size:18px !important}
+
+    /* about */
+    .about{padding:70px 0 !important}
+    .about-mosaic{height:auto !important;grid-template-rows:auto !important}
+    .about-photo{height:180px}
+    .about-photo-1,.about-photo-2,.about-photo-3,.about-photo-4{grid-row:auto;grid-column:auto}
+    .about-badge{position:static;display:inline-block;margin-bottom:12px;transform:none}
+
+    /* economy section */
+    .economy{padding:70px 0 !important}
+
+    /* destinations */
+    .destinations{padding:70px 0 !important}
+
+    /* tweaks panel some no mobile real pra não atrapalhar */
+    #tweaks-panel{width:calc(100% - 40px) !important;left:20px !important;right:20px !important;bottom:80px !important}
+
+    /* mobile toggle menor */
+    #mobile-toggle{width:44px;height:44px;font-size:18px;top:12px;right:12px}
+  }
+
+  @media (max-width: 480px){
+    .hero-title{font-size:30px !important}
+    .section-title{font-size:24px !important}
+    .about-stats{display:none !important}
+    .about-stat{padding:12px 8px !important}
+    .about-stat .num{font-size:22px !important}
+    .about-stat .lbl{font-size:10px !important}
+  }
+</style>
+<button id="mobile-toggle" title="Ver mobile">📱</button>
+<script>
+(function(){
+  const btn = document.getElementById('mobile-toggle');
+  const KEY = 'preview-mobile';
+  function apply(on){
+    document.body.classList.toggle('preview-mobile', on);
+    btn.classList.toggle('is-mobile', on);
+    btn.textContent = on ? '🖥️' : '📱';
+    btn.title = on ? 'Voltar pro desktop' : 'Ver mobile';
+    try{ localStorage.setItem(KEY, on ? '1' : '0'); }catch(e){}
+  }
+  let init = false;
+  try{ init = localStorage.getItem(KEY) === '1'; }catch(e){}
+  apply(init);
+  btn.addEventListener('click', () => apply(!document.body.classList.contains('preview-mobile')));
+})();
+</script>
+
+<!-- STICKY BUY BAR (aparece ao entrar na seção #economia) -->
+<style>
+  .buy-sticky{
+    position:fixed;left:0;right:0;bottom:0;z-index:999;
+    background:rgba(10,31,61,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    transform:translateY(110%);opacity:0;pointer-events:none;
+    transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .3s ease;
+  }
+  .buy-sticky.is-visible{transform:translateY(0);opacity:1;pointer-events:auto}
+  .buy-sticky-inner{
+    max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px;
+    background:#fff;border-radius:16px;padding:10px 10px 10px 18px;
+    box-shadow:0 12px 40px rgba(0,0,0,.35);
+  }
+  .buy-sticky-price{display:flex;flex-direction:column;line-height:1;flex:0 0 auto}
+  .buy-sticky-price .old{font-size:13px;color:#9aa3b2;text-decoration:line-through;margin-bottom:4px;font-weight:500}
+  .buy-sticky-price .now{font-size:26px;font-weight:800;color:#0A1F3D;letter-spacing:-.02em}
+  .buy-sticky-price .now small{font-size:13px;font-weight:500;color:#5b6575;margin-left:2px}
+  .buy-sticky-cta{
+    flex:1;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:#2684FF;color:#fff;font-weight:700;font-size:16px;
+    padding:14px 18px;border-radius:12px;text-decoration:none;
+    box-shadow:0 6px 18px rgba(38,132,255,.4);
+    transition:background .2s ease, transform .15s ease;
+    position:relative;overflow:hidden;isolation:isolate;
+  }
+  .buy-sticky-cta::before{
+    content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;
+    background:linear-gradient(100deg,
+      transparent 0%,
+      rgba(255,255,255,.05) 30%,
+      rgba(255,255,255,.55) 50%,
+      rgba(255,255,255,.05) 70%,
+      transparent 100%);
+    transform:skewX(-20deg);
+    animation:buyStickySweep 2.6s ease-in-out infinite;
+    pointer-events:none;z-index:0;
+  }
+  .buy-sticky-cta > *{position:relative;z-index:1}
+  @keyframes buyStickySweep{
+    0%{left:-120%}
+    60%{left:140%}
+    100%{left:140%}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .buy-sticky-cta::before{animation:none;display:none}
+  }
+  .buy-sticky-cta:hover{background:#1f74e6}
+  .buy-sticky-cta:active{transform:scale(.98)}
+  .buy-sticky-cta svg{width:18px;height:18px}
+  @media (max-width:520px){
+    .buy-sticky{padding:10px 10px calc(10px + env(safe-area-inset-bottom))}
+    .buy-sticky-inner{padding:8px 8px 8px 14px;gap:10px;border-radius:14px}
+    .buy-sticky-price .now{font-size:22px}
+    .buy-sticky-price .old{font-size:12px}
+    .buy-sticky-cta{font-size:15px;padding:12px 14px;border-radius:10px}
+  }
+</style>
+<div class="buy-sticky" id="buyStickyBar" aria-hidden="true">
+  <div class="buy-sticky-inner">
+    <div class="buy-sticky-price">
+      <span class="old">R$ 97</span>
+      <span class="now">R$ 107<small>/roteiro</small></span>
+    </div>
+    <a href="#oferta" class="buy-sticky-cta">
+      Comprar agora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+<script>
+(function(){
+  var bar = document.getElementById('buyStickyBar');
+  var eco = document.getElementById('economia');
+  if(!bar || !eco) return;
+  var show = false;
+  function update(){
+    var r = eco.getBoundingClientRect();
+    // aparece quando topo da seção entra na tela e some quando ela sai por cima
+    var shouldShow = r.top < (window.innerHeight * 0.85) && r.bottom > 80;
+    if(shouldShow !== show){
+      show = shouldShow;
+      bar.classList.toggle('is-visible', show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+
+<script>
+// Avatars do hero: troca uma foto por vez com crossfade
+(function(){
+  var pool = [
+    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80',
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
+    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80',
+    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80',
+    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&q=80',
+    'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80',
+    'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=100&q=80',
+    'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
+    'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80',
+    'https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=100&q=80',
+    'https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80',
+    'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80',
+    'https://images.unsplash.com/photo-1546961342-1e3de35e4cc5?w=100&q=80',
+    'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80'
+  ];
+  // preload
+  pool.forEach(function(src){ var im = new Image(); im.src = src; });
+
+  var container = document.getElementById('heroAvatars');
+  if(!container) return;
+  var avatars = Array.prototype.slice.call(container.querySelectorAll('.avatar'));
+  // current pic index per slot (avoid repeats/duplicates)
+  var used = avatars.map(function(a){
+    var first = a.querySelector('.av-layer');
+    var m = first && first.style.backgroundImage.match(/photo-[^?']+/);
+    return m ? m[0] : null;
+  });
+
+  function pickNext(currentUsed){
+    var tries = 0;
+    while(tries++ < 30){
+      var src = pool[Math.floor(Math.random() * pool.length)];
+      var id = (src.match(/photo-[^?]+/)||[])[0];
+      if(currentUsed.indexOf(id) === -1) return {src:src, id:id};
+    }
+    return {src: pool[0], id: (pool[0].match(/photo-[^?]+/)||[])[0]};
+  }
+
+  var slot = 0;
+  function tick(){
+    var av = avatars[slot];
+    var layers = av.querySelectorAll('.av-layer');
+    var active = av.querySelector('.av-layer.is-active');
+    var inactive = layers[0] === active ? layers[1] : layers[0];
+    var currentUsed = used.slice();
+    currentUsed.splice(slot, 1); // allow reusing this slot's old pic elsewhere later, but not dup with others now
+    var next = pickNext(currentUsed);
+    inactive.style.backgroundImage = "url('" + next.src + "')";
+    // force reflow then swap
+    void inactive.offsetWidth;
+    inactive.classList.add('is-active');
+    active.classList.remove('is-active');
+    used[slot] = next.id;
+    slot = (slot + 1) % avatars.length;
+  }
+  setInterval(tick, 1800);
+})();
+</script>
+
+<script>
+// Global section reveal: blur + slide + fade, REVERSÍVEL ao sair da tela
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // Seções da landing (exclui hero — já tem animação própria)
+  var sections = document.querySelectorAll('section:not(.hero), footer, .auth-strip');
+  sections.forEach(function(s){ s.classList.add('sec-reveal'); });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('is-in');
+      } else {
+        // Só remove se estiver bem fora (evita flicker quando parte do elemento ainda visível)
+        var r = e.boundingClientRect;
+        if(r.bottom < 0 || r.top > window.innerHeight){
+          e.target.classList.remove('is-in');
+        }
+      }
+    });
+  }, {
+    threshold: [0, 0.15],
+    rootMargin: '0px 0px -10% 0px'
+  });
+  sections.forEach(function(s){ io.observe(s); });
+})();
+</script>
+
+</body></html>
