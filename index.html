@@ -3018,5 +3018,76 @@
 })();
 </script>
 
+<!-- STICKY BUY BAR (aparece ao entrar na seção #economia) -->
+<style>
+  .buy-sticky{
+    position:fixed;left:0;right:0;bottom:0;z-index:999;
+    background:rgba(10,31,61,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    transform:translateY(110%);opacity:0;pointer-events:none;
+    transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .3s ease;
+  }
+  .buy-sticky.is-visible{transform:translateY(0);opacity:1;pointer-events:auto}
+  .buy-sticky-inner{
+    max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px;
+    background:#fff;border-radius:16px;padding:10px 10px 10px 18px;
+    box-shadow:0 12px 40px rgba(0,0,0,.35);
+  }
+  .buy-sticky-price{display:flex;flex-direction:column;line-height:1;flex:0 0 auto}
+  .buy-sticky-price .old{font-size:13px;color:#9aa3b2;text-decoration:line-through;margin-bottom:4px;font-weight:500}
+  .buy-sticky-price .now{font-size:26px;font-weight:800;color:#0A1F3D;letter-spacing:-.02em}
+  .buy-sticky-price .now small{font-size:13px;font-weight:500;color:#5b6575;margin-left:2px}
+  .buy-sticky-cta{
+    flex:1;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:#2684FF;color:#fff;font-weight:700;font-size:16px;
+    padding:14px 18px;border-radius:12px;text-decoration:none;
+    box-shadow:0 6px 18px rgba(38,132,255,.4);
+    transition:background .2s ease, transform .15s ease;
+  }
+  .buy-sticky-cta:hover{background:#1f74e6}
+  .buy-sticky-cta:active{transform:scale(.98)}
+  .buy-sticky-cta svg{width:18px;height:18px}
+  @media (max-width:520px){
+    .buy-sticky{padding:10px 10px calc(10px + env(safe-area-inset-bottom))}
+    .buy-sticky-inner{padding:8px 8px 8px 14px;gap:10px;border-radius:14px}
+    .buy-sticky-price .now{font-size:22px}
+    .buy-sticky-price .old{font-size:12px}
+    .buy-sticky-cta{font-size:15px;padding:12px 14px;border-radius:10px}
+  }
+</style>
+<div class="buy-sticky" id="buyStickyBar" aria-hidden="true">
+  <div class="buy-sticky-inner">
+    <div class="buy-sticky-price">
+      <span class="old">R$ 97</span>
+      <span class="now">R$ 47<small>/roteiro</small></span>
+    </div>
+    <a href="#oferta" class="buy-sticky-cta">
+      Comprar agora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+<script>
+(function(){
+  var bar = document.getElementById('buyStickyBar');
+  var eco = document.getElementById('economia');
+  if(!bar || !eco) return;
+  var show = false;
+  function update(){
+    var r = eco.getBoundingClientRect();
+    // aparece quando topo da seção entra na tela e some quando ela sai por cima
+    var shouldShow = r.top < (window.innerHeight * 0.85) && r.bottom > 80;
+    if(shouldShow !== show){
+      show = shouldShow;
+      bar.classList.toggle('is-visible', show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 
 </body></html>
