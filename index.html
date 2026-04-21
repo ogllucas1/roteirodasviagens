@@ -2946,23 +2946,24 @@
   const bar = document.getElementById('sticky-cta');
   if(!bar) return;
 
-  const authStrip = document.querySelector('.auth-strip');
-  const solution  = document.querySelector('.solution');
+  const authStrip   = document.querySelector('.auth-strip');
+  const destinations= document.querySelector('.destinations');
+  const about       = document.querySelector('#sobre, .about');
 
   let ticking = false;
   function check(){
     const y = window.scrollY + 100;
-    const topOf = el => el ? (el.getBoundingClientRect().top + window.scrollY) : Infinity;
+    const topOf    = el => el ? (el.getBoundingClientRect().top    + window.scrollY) : Infinity;
     const bottomOf = el => el ? (el.getBoundingClientRect().bottom + window.scrollY) : Infinity;
 
-    const aAuth    = topOf(authStrip);
-    const solTop   = topOf(solution);
-    const solBot   = bottomOf(solution);
+    const aAuth  = topOf(authStrip);
+    const dTop   = topOf(destinations);
+    const aAbout = topOf(about);
 
-    // Aparece a partir dos números; some dentro da .solution; volta ao sair dela
-    const afterAuth   = y >= aAuth;
-    const insideSol   = y >= solTop && y < solBot;
-    const show = afterAuth && !insideSol;
+    // Visible: (auth-strip → antes de .destinations) OR (a partir de .about até o fim)
+    const phase1 = y >= aAuth && y < dTop;
+    const phase2 = y >= aAbout;
+    const show = phase1 || phase2;
 
     bar.classList.toggle('is-visible', show);
     document.body.classList.toggle('sticky-visible', show);
