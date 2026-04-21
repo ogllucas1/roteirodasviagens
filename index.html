@@ -316,7 +316,14 @@
     border:3px solid var(--navy);
     background-size:cover;background-position:center;
     margin-left:-12px;
+    position:relative;overflow:hidden;
   }
+  .avatar .av-layer{
+    position:absolute;inset:0;border-radius:50%;
+    background-size:cover;background-position:center;
+    opacity:0;transition:opacity .7s ease;
+  }
+  .avatar .av-layer.is-active{opacity:1}
   .avatar:first-child{margin-left:0}
   .trust-text{font-size:14px;color:rgba(255,255,255,.85)}
   .trust-text strong{color:var(--white)}
@@ -1485,11 +1492,11 @@
       <p class="hero-sub">Roteiros completos dia a dia, com os principais pontos turísticos, links de compra direto no PDF e tudo testado por quem já conhece <strong>38 países</strong>. Você abre e segue.</p>
       <a href="#destinos" class="hero-cta" style="color: rgb(255, 255, 255);" data-cc-id="cc-24">Ver roteiros disponíveis</a>
       <div class="hero-trust">
-        <div class="avatars">
-          <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&amp;q=80')"></div>
-          <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&amp;q=80')"></div>
-          <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&amp;q=80')"></div>
-          <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&amp;q=80')"></div>
+        <div class="avatars" id="heroAvatars">
+          <div class="avatar" data-slot="0"><div class="av-layer is-active" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&amp;q=80')"></div><div class="av-layer"></div></div>
+          <div class="avatar" data-slot="1"><div class="av-layer is-active" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&amp;q=80')"></div><div class="av-layer"></div></div>
+          <div class="avatar" data-slot="2"><div class="av-layer is-active" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&amp;q=80')"></div><div class="av-layer"></div></div>
+          <div class="avatar" data-slot="3"><div class="av-layer is-active" style="background-image:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&amp;q=80')"></div><div class="av-layer"></div></div>
         </div>
         <div class="trust-text">
           <div class="stars">★★★★★</div>
@@ -3098,6 +3105,28 @@
     padding:14px 18px;border-radius:12px;text-decoration:none;
     box-shadow:0 6px 18px rgba(38,132,255,.4);
     transition:background .2s ease, transform .15s ease;
+    position:relative;overflow:hidden;isolation:isolate;
+  }
+  .buy-sticky-cta::before{
+    content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;
+    background:linear-gradient(100deg,
+      transparent 0%,
+      rgba(255,255,255,.05) 30%,
+      rgba(255,255,255,.55) 50%,
+      rgba(255,255,255,.05) 70%,
+      transparent 100%);
+    transform:skewX(-20deg);
+    animation:buyStickySweep 2.6s ease-in-out infinite;
+    pointer-events:none;z-index:0;
+  }
+  .buy-sticky-cta > *{position:relative;z-index:1}
+  @keyframes buyStickySweep{
+    0%{left:-120%}
+    60%{left:140%}
+    100%{left:140%}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .buy-sticky-cta::before{animation:none;display:none}
   }
   .buy-sticky-cta:hover{background:#1f74e6}
   .buy-sticky-cta:active{transform:scale(.98)}
@@ -3141,6 +3170,70 @@
   window.addEventListener('scroll', update, {passive:true});
   window.addEventListener('resize', update);
   update();
+})();
+</script>
+
+<script>
+// Avatars do hero: troca uma foto por vez com crossfade
+(function(){
+  var pool = [
+    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80',
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
+    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80',
+    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80',
+    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&q=80',
+    'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80',
+    'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=100&q=80',
+    'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
+    'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80',
+    'https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=100&q=80',
+    'https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80',
+    'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80',
+    'https://images.unsplash.com/photo-1546961342-1e3de35e4cc5?w=100&q=80',
+    'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80'
+  ];
+  // preload
+  pool.forEach(function(src){ var im = new Image(); im.src = src; });
+
+  var container = document.getElementById('heroAvatars');
+  if(!container) return;
+  var avatars = Array.prototype.slice.call(container.querySelectorAll('.avatar'));
+  // current pic index per slot (avoid repeats/duplicates)
+  var used = avatars.map(function(a){
+    var first = a.querySelector('.av-layer');
+    var m = first && first.style.backgroundImage.match(/photo-[^?']+/);
+    return m ? m[0] : null;
+  });
+
+  function pickNext(currentUsed){
+    var tries = 0;
+    while(tries++ < 30){
+      var src = pool[Math.floor(Math.random() * pool.length)];
+      var id = (src.match(/photo-[^?]+/)||[])[0];
+      if(currentUsed.indexOf(id) === -1) return {src:src, id:id};
+    }
+    return {src: pool[0], id: (pool[0].match(/photo-[^?]+/)||[])[0]};
+  }
+
+  var slot = 0;
+  function tick(){
+    var av = avatars[slot];
+    var layers = av.querySelectorAll('.av-layer');
+    var active = av.querySelector('.av-layer.is-active');
+    var inactive = layers[0] === active ? layers[1] : layers[0];
+    var currentUsed = used.slice();
+    currentUsed.splice(slot, 1); // allow reusing this slot's old pic elsewhere later, but not dup with others now
+    var next = pickNext(currentUsed);
+    inactive.style.backgroundImage = "url('" + next.src + "')";
+    // force reflow then swap
+    void inactive.offsetWidth;
+    inactive.classList.add('is-active');
+    active.classList.remove('is-active');
+    used[slot] = next.id;
+    slot = (slot + 1) % avatars.length;
+  }
+  setInterval(tick, 1800);
 })();
 </script>
 
