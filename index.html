@@ -680,10 +680,10 @@
     border-color:var(--blue);
   }
   .feature.highlight{
-    background:linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 100%);
+    background:linear-gradient(135deg, #1E88E5 0%, #42A5F5 100%) !important;
     color:var(--white);
-    border:none;
-    box-shadow:0 20px 50px rgba(30,136,229,.3);
+    border:none !important;
+    box-shadow:0 20px 50px rgba(30,136,229,.5), 0 0 0 2px rgba(66,165,245,.4);
     position:relative;
   }
   .feature.highlight::before{
@@ -2613,6 +2613,17 @@
   <input type="range" id="hero-sub-size" min="10" max="24" value="16" step="1">
   <label>Cards flutuantes <span class="val" id="fcs-val">100</span>%</label>
   <input type="range" id="float-card-scale" min="40" max="120" value="100" step="1">
+  <h4 style="margin-top:18px;padding-top:14px;border-top:1px solid #e0e7ef">Badge "★ DIFERENCIAL"</h4>
+  <label>Horizontal (right) <span class="val" id="dx-val">20</span>px</label>
+  <input type="range" id="d-x" min="-50" max="300" value="20" step="1">
+  <label>Vertical (top) <span class="val" id="dy-val">-10</span>px</label>
+  <input type="range" id="d-y" min="-60" max="80" value="-10" step="1">
+  <label>Tamanho <span class="val" id="dsz-val">10</span>px</label>
+  <input type="range" id="d-sz" min="8" max="28" value="10" step="1">
+  <label>Padding horizontal <span class="val" id="dph-val">10</span>px</label>
+  <input type="range" id="d-ph" min="4" max="40" value="10" step="1">
+  <label>Cor fundo <input type="color" id="d-bg" value="#F4B942" style="width:46px;height:28px;padding:0;border-radius:6px"></label>
+  <label>Cor texto <input type="color" id="d-fg" value="#0A1F3D" style="width:46px;height:28px;padding:0;border-radius:6px"></label>
   <h4 style="margin-top:18px;padding-top:14px;border-top:1px solid #e0e7ef">Card "Dia a dia" (mobile)</h4>
   <label>Horizontal <span class="val" id="f1x-val">0</span>px</label>
   <input type="range" id="f1-x" min="-300" max="300" value="0" step="1">
@@ -2643,12 +2654,18 @@
     "heroTitleSize": 33,
     "heroSubSize": 16,
     "floatCardScale": 75,
-    "f1x": 6,
+    "f1x": 5,
     "f1y": 0,
     "f2x": 26,
     "f2y": -119,
     "f3x": -25,
-    "f3y": -7
+    "f3y": -7,
+    "dx": 20,
+    "dy": 39,
+    "dSz": 10,
+    "dPh": 29,
+    "dBg": "#F4B942",
+    "dFg": "#0A1F3D"
   }/*EDITMODE-END*/;
 
   const panel = document.getElementById('tweaks-panel');
@@ -2672,6 +2689,14 @@
     const f2 = `translate(${state.f2x}px, ${state.f2y}px) scale(${s})`;
     const f3 = `translate(${state.f3x}px, ${state.f3y}px) scale(${s})`;
     dynStyle.textContent = `
+      .feature.highlight::before{
+        top:${state.dy}px !important;
+        right:${state.dx}px !important;
+        font-size:${state.dSz}px !important;
+        padding:4px ${state.dPh}px !important;
+        background:${state.dBg} !important;
+        color:${state.dFg} !important;
+      }
       @media(max-width:900px){
         .hero-title{font-size:${state.heroTitleSize}px !important;line-height:1.1 !important}
         .hero-sub{font-size:${state.heroSubSize}px !important}
@@ -2698,6 +2723,10 @@
     document.getElementById('f2y-val').textContent = state.f2y;
     document.getElementById('f3x-val').textContent = state.f3x;
     document.getElementById('f3y-val').textContent = state.f3y;
+    document.getElementById('dx-val').textContent = state.dx;
+    document.getElementById('dy-val').textContent = state.dy;
+    document.getElementById('dsz-val').textContent = state.dSz;
+    document.getElementById('dph-val').textContent = state.dPh;
     document.getElementById('logo-x').value = state.logoX;
     document.getElementById('logo-y').value = state.logoY;
     document.getElementById('btn-x').value = state.btnX;
@@ -2711,6 +2740,12 @@
     document.getElementById('f2-y').value = state.f2y;
     document.getElementById('f3-x').value = state.f3x;
     document.getElementById('f3-y').value = state.f3y;
+    document.getElementById('d-x').value = state.dx;
+    document.getElementById('d-y').value = state.dy;
+    document.getElementById('d-sz').value = state.dSz;
+    document.getElementById('d-ph').value = state.dPh;
+    document.getElementById('d-bg').value = state.dBg;
+    document.getElementById('d-fg').value = state.dFg;
   }
   apply();
 
@@ -2722,7 +2757,10 @@
         floatCardScale: state.floatCardScale,
         f1x: state.f1x, f1y: state.f1y,
         f2x: state.f2x, f2y: state.f2y,
-        f3x: state.f3x, f3y: state.f3y
+        f3x: state.f3x, f3y: state.f3y,
+        dx: state.dx, dy: state.dy,
+        dSz: state.dSz, dPh: state.dPh,
+        dBg: state.dBg, dFg: state.dFg
       }}, '*');
     }catch(e){}
   }
@@ -2730,6 +2768,13 @@
   function bind(id, key){
     document.getElementById(id).addEventListener('input', e => {
       state[key] = parseInt(e.target.value, 10);
+      apply();
+      persist();
+    });
+  }
+  function bindColor(id, key){
+    document.getElementById(id).addEventListener('input', e => {
+      state[key] = e.target.value;
       apply();
       persist();
     });
@@ -2742,6 +2787,9 @@
   bind('f1-x','f1x'); bind('f1-y','f1y');
   bind('f2-x','f2x'); bind('f2-y','f2y');
   bind('f3-x','f3x'); bind('f3-y','f3y');
+  bind('d-x','dx'); bind('d-y','dy');
+  bind('d-sz','dSz'); bind('d-ph','dPh');
+  bindColor('d-bg','dBg'); bindColor('d-fg','dFg');
 
   document.getElementById('tweaks-reset').addEventListener('click', () => {
     state.logoX = 0; state.logoY = 0; state.btnX = 0; state.btnY = 0;
@@ -2750,6 +2798,12 @@
     state.f1x = 0; state.f1y = 0;
     state.f2x = 0; state.f2y = 0;
     state.f3x = 0; state.f3y = 0;
+    state.dx = 20; state.dy = -10;
+    state.dSz = 10; state.dPh = 10;
+    state.dBg = '#F4B942'; state.dFg = '#0A1F3D';
+    // reset color inputs too
+    document.getElementById('d-bg').value = state.dBg;
+    document.getElementById('d-fg').value = state.dFg;
     apply(); persist();
   });
   document.getElementById('tweaks-close').addEventListener('click', () => {
