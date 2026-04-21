@@ -1249,10 +1249,14 @@
     .topbar{padding:8px 12px;font-size:11px;line-height:1.3}
     .topbar strong{display:inline}
     
-    /* NAV - logo menor e bem posicionado */
+    /* NAV - logo grande, centralizada, sem menu */
     nav{padding:10px 0}
-    .nav-inner{padding:0 16px}
-    .logo-img{height:46px}
+    .nav-inner{padding:0 16px;position:relative;justify-content:center}
+    .logo-img{height:70px}
+    nav .logo{
+      transform:none !important;
+    }
+    nav .menu, nav .nav-cta, nav .nav-links{display:none !important}
     
     /* HERO - ajustes pesados */
     .hero{padding:30px 0 50px}
@@ -1372,7 +1376,7 @@
     /* Telas BEM pequenas tipo iPhone SE */
     h1.hero-title{font-size:28px !important}
     .section-title{font-size:22px !important}
-    .logo-img{height:40px}
+    .logo-img{height:60px}
     .price .amount{font-size:40px}
     .auth-stat .num{font-size:24px}
   }
@@ -2653,8 +2657,8 @@
   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     "logoX": 96,
     "logoY": 3,
-    "logoSz": 46,
-    "logoCenter": false,
+    "logoSz": 70,
+    "logoCenter": true,
     "btnX": -1000,
     "btnY": 60,
     "heroTitleSize": 33,
@@ -3030,7 +3034,10 @@
   @media (max-width: 900px){
     .container{padding-left:20px !important;padding-right:20px !important}
     .nav-links{display:none !important}
-    .nav-inner{padding:0 16px !important}
+    .nav-inner{padding:0 16px !important;justify-content:center !important;position:relative !important}
+    .logo-img{height:70px !important}
+    nav .logo{transform:none !important}
+    nav .menu, nav .nav-cta, nav .nav-links{display:none !important}
 
     /* grids => 1 coluna */
     .features,
