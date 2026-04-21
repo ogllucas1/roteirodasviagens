@@ -2944,12 +2944,28 @@
 <script>
 (function(){
   const bar = document.getElementById('sticky-cta');
-  const hero = document.querySelector('.hero');
-  if(!bar || !hero) return;
+  if(!bar) return;
+
+  // Ranges onde o sticky DEVE aparecer:
+  //  1) A partir do topo de .auth-strip  →  até o topo de .solution
+  //  2) A partir do topo de .about       →  até o fim da página
+  const authStrip = document.querySelector('.auth-strip');
+  const solution  = document.querySelector('.solution');
+  const about     = document.querySelector('#sobre, .about');
+
   let ticking = false;
   function check(){
-    const heroBottom = hero.getBoundingClientRect().bottom;
-    const show = heroBottom < 100;
+    const y = window.scrollY + 100; // offset p/ disparar um pouco antes
+    const topOf = el => el ? (el.getBoundingClientRect().top + window.scrollY) : Infinity;
+
+    const aAuth = topOf(authStrip);
+    const aSol  = topOf(solution);
+    const aAbout= topOf(about);
+
+    const inRange1 = y >= aAuth  && y < aSol;    // números → antes de "O que tem dentro"
+    const inRange2 = y >= aAbout;                // a partir de "Quem tá por trás"
+    const show = inRange1 || inRange2;
+
     bar.classList.toggle('is-visible', show);
     document.body.classList.toggle('sticky-visible', show);
     ticking = false;
@@ -2957,6 +2973,7 @@
   window.addEventListener('scroll', () => {
     if(!ticking){ requestAnimationFrame(check); ticking = true; }
   }, {passive:true});
+  window.addEventListener('resize', check, {passive:true});
   check();
 })();
 </script>
