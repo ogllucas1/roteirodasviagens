@@ -1299,9 +1299,7 @@
       margin:0 auto 20px;
       display:inline-block;
     }
-    .about-stats{grid-template-columns:repeat(3,1fr);gap:8px}
-    .about-stat{padding:12px 8px}
-    .about-stat .num{font-size:22px}
+    .about-stats{display:none !important}
     .about-stat .lbl{font-size:10px}
     
     /* DESTINOS */
@@ -2602,6 +2600,12 @@
   <input type="range" id="logo-x" min="-200" max="1200" value="0" step="1">
   <label>Logo: deslocar vertical <span class="val" id="ly-val">49</span>px</label>
   <input type="range" id="logo-y" min="-300" max="300" value="0" step="1">
+  <label>📱 Logo tamanho (mobile) <span class="val" id="lsz-val">46</span>px</label>
+  <input type="range" id="logo-sz" min="32" max="120" value="46" step="1">
+  <label style="display:flex;align-items:center;gap:8px;margin-top:4px">
+    <input type="checkbox" id="logo-center" style="width:auto;margin:0">
+    📱 Centralizar logo (mobile)
+  </label>
   <label>Botão: deslocar horizontal <span class="val" id="bx-val">324</span>px</label>
   <input type="range" id="btn-x" min="-1200" max="400" value="0" step="1">
   <label>Botão: deslocar vertical <span class="val" id="by-val">60</span>px</label>
@@ -2649,6 +2653,8 @@
   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     "logoX": 96,
     "logoY": 3,
+    "logoSz": 46,
+    "logoCenter": false,
     "btnX": -1000,
     "btnY": 60,
     "heroTitleSize": 33,
@@ -2681,7 +2687,14 @@
   document.head.appendChild(dynStyle);
 
   function apply(){
-    if(logo) logo.style.transform = `translate(${state.logoX}px, ${state.logoY}px)`;
+    const isMobile = window.matchMedia('(max-width:900px)').matches || document.body.classList.contains('preview-mobile');
+    if(logo){
+      if(isMobile && state.logoCenter){
+        logo.style.transform = ''; // centralização cuida via CSS
+      } else {
+        logo.style.transform = `translate(${state.logoX}px, ${state.logoY}px)`;
+      }
+    }
     if(btn) btn.style.transform = `translate(${state.btnX}px, ${state.btnY}px)`;
     // aplica fonte da hero no mobile (<=900px) e no preview-mobile
     const s = state.floatCardScale/100;
@@ -2703,7 +2716,29 @@
         .float-card.float-1{transform:${f1} !important;transform-origin:center !important}
         .float-card.float-2{transform:${f2} !important;transform-origin:center !important}
         .float-card.float-3{transform:${f3} !important;transform-origin:center !important}
+        nav .logo-img{height:${state.logoSz}px !important}
+        ${state.logoCenter ? `
+          nav .nav-inner{position:relative}
+          nav .logo{
+            position:absolute !important;
+            left:50% !important;
+            top:50% !important;
+            transform:translate(-50%, -50%) !important;
+          }
+          nav .menu{display:none !important}
+        ` : ''}
       }
+      body.preview-mobile nav .logo-img{height:${state.logoSz}px !important}
+      ${state.logoCenter ? `
+        body.preview-mobile nav .nav-inner{position:relative}
+        body.preview-mobile nav .logo{
+          position:absolute !important;
+          left:50% !important;
+          top:50% !important;
+          transform:translate(-50%, -50%) !important;
+        }
+        body.preview-mobile nav .menu{display:none !important}
+      ` : ''}
       body.preview-mobile .hero-title{font-size:${state.heroTitleSize}px !important;line-height:1.1 !important}
       body.preview-mobile .hero-sub{font-size:${state.heroSubSize}px !important}
       body.preview-mobile .float-card.float-1{transform:${f1} !important;transform-origin:center !important}
@@ -2712,6 +2747,7 @@
     `;
     document.getElementById('lx-val').textContent = state.logoX;
     document.getElementById('ly-val').textContent = state.logoY;
+    document.getElementById('lsz-val').textContent = state.logoSz;
     document.getElementById('bx-val').textContent = state.btnX;
     document.getElementById('by-val').textContent = state.btnY;
     document.getElementById('hts-val').textContent = state.heroTitleSize;
@@ -2729,6 +2765,8 @@
     document.getElementById('dph-val').textContent = state.dPh;
     document.getElementById('logo-x').value = state.logoX;
     document.getElementById('logo-y').value = state.logoY;
+    document.getElementById('logo-sz').value = state.logoSz;
+    document.getElementById('logo-center').checked = !!state.logoCenter;
     document.getElementById('btn-x').value = state.btnX;
     document.getElementById('btn-y').value = state.btnY;
     document.getElementById('hero-title-size').value = state.heroTitleSize;
@@ -2752,7 +2790,9 @@
   function persist(){
     try{
       window.parent.postMessage({type:'__edit_mode_set_keys', edits: {
-        logoX: state.logoX, logoY: state.logoY, btnX: state.btnX, btnY: state.btnY,
+        logoX: state.logoX, logoY: state.logoY,
+        logoSz: state.logoSz, logoCenter: state.logoCenter,
+        btnX: state.btnX, btnY: state.btnY,
         heroTitleSize: state.heroTitleSize, heroSubSize: state.heroSubSize,
         floatCardScale: state.floatCardScale,
         f1x: state.f1x, f1y: state.f1y,
@@ -2780,6 +2820,12 @@
     });
   }
   bind('logo-x','logoX'); bind('logo-y','logoY');
+  bind('logo-sz','logoSz');
+  document.getElementById('logo-center').addEventListener('change', e => {
+    state.logoCenter = e.target.checked;
+    apply();
+    persist();
+  });
   bind('btn-x','btnX'); bind('btn-y','btnY');
   bind('hero-title-size','heroTitleSize');
   bind('hero-sub-size','heroSubSize');
@@ -2793,6 +2839,7 @@
 
   document.getElementById('tweaks-reset').addEventListener('click', () => {
     state.logoX = 0; state.logoY = 0; state.btnX = 0; state.btnY = 0;
+    state.logoSz = 46; state.logoCenter = false;
     state.heroTitleSize = 36; state.heroSubSize = 16;
     state.floatCardScale = 100;
     state.f1x = 0; state.f1y = 0;
@@ -2804,6 +2851,7 @@
     // reset color inputs too
     document.getElementById('d-bg').value = state.dBg;
     document.getElementById('d-fg').value = state.dFg;
+    document.getElementById('logo-center').checked = false;
     apply(); persist();
   });
   document.getElementById('tweaks-close').addEventListener('click', () => {
@@ -2857,7 +2905,7 @@
   body.preview-mobile .hero-grid,
   body.preview-mobile .about-grid,
   body.preview-mobile .eco-comparison,
-  body.preview-mobile .about-stats,
+  body.preview-mobile .about-stats{display:none !important}
   body.preview-mobile .about-mosaic{
     grid-template-columns:1fr !important;
     gap:16px !important;
@@ -2993,7 +3041,7 @@
       grid-template-columns:1fr !important;
       gap:20px !important;
     }
-    .about-stats{grid-template-columns:repeat(3,1fr) !important;gap:10px !important}
+    .about-stats{display:none !important}
 
     /* hero */
     .hero{padding:50px 0 70px !important}
@@ -3039,7 +3087,7 @@
   @media (max-width: 480px){
     .hero-title{font-size:30px !important}
     .section-title{font-size:24px !important}
-    .about-stats{grid-template-columns:repeat(3,1fr) !important}
+    .about-stats{display:none !important}
     .about-stat{padding:12px 8px !important}
     .about-stat .num{font-size:22px !important}
     .about-stat .lbl{font-size:10px !important}
